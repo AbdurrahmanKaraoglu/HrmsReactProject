@@ -5,15 +5,12 @@ export default function JobSortBy() {
     return (
         <div>
             <Container>
-
-                <Menu text widths>
+                <Menu text >
                     <Menu.Item header>Sort By</Menu.Item>
                     <Menu.Item name='closest' />
                     <Menu.Item name='mostComments' />
                     <Menu.Item name='mostPopular' />
                 </Menu>
-
-
             </Container>
         </div>
     )

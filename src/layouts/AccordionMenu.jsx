@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
-import { Accordion, Form, Menu,Container } from 'semantic-ui-react'
+import { Accordion, Form, Menu } from 'semantic-ui-react'
 
 const ColorForm = (
     <Form>
         <Form.Group grouped>
+            <Form.Checkbox label='Red' name='color' value='red' />
+            <Form.Checkbox label='Orange' name='color' value='orange' />
+            <Form.Checkbox label='Green' name='color' value='green' />
+            <Form.Checkbox label='Blue' name='color' value='blue' />
+            <Form.Checkbox label='Red' name='color' value='red' />
+            <Form.Checkbox label='Orange' name='color' value='orange' />
+            <Form.Checkbox label='Green' name='color' value='green' />
+            <Form.Checkbox label='Blue' name='color' value='blue' />
             <Form.Checkbox label='Red' name='color' value='red' />
             <Form.Checkbox label='Orange' name='color' value='orange' />
             <Form.Checkbox label='Green' name='color' value='green' />
@@ -28,11 +36,9 @@ export default class AccordionMenu extends Component {
         const { activeIndex } = this.state
 
         return (
-
+            
             <Accordion as={Menu} vertical>
-                <Container>
-
-
+               
                     <Menu.Item>
                         <Accordion.Title
                             active={activeIndex === 0}
@@ -61,8 +67,9 @@ export default class AccordionMenu extends Component {
                         />
                         <Accordion.Content active={activeIndex === 2} content={ColorForm} />
                     </Menu.Item>
-                </Container>
+              
             </Accordion>
+            
         )
     }
 }
