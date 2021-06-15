@@ -13,12 +13,18 @@ const DropdownExampleCloseOnChange = () => (
     <>
         <Dropdown
             multiple
+            selection
+           
+            placeholder='Choose an option'
+        />{' '}
+        <Dropdown
+            multiple
             search
             selection
             closeOnChange
             options={getOptions(5)}
             placeholder='Location'
-        />{' '}
+        />
         <Dropdown
             multiple
             search

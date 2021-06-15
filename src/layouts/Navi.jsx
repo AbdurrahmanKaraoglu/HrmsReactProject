@@ -1,18 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Dropdown, Menu } from 'semantic-ui-react'
 import { Container } from 'semantic-ui-react'
 import SignedOut from './SignedOut'
 import SignedIn from './SignedIn'
 
 export default function Navi() {
+    const [isAuthenticated, setIsAuthenticated] = useState(true)
+
+    function handleSignOut() {
+        setIsAuthenticated(false);
+    }
+    function handleSignIn() {
+        setIsAuthenticated(true);
+    }
+
     return (
         <div>
-
             <Menu inverted fixed="top">
                 <Container>
                     <Menu.Item name='Human Resource Management System' />
                     <Menu.Item name='messages' />
-
                     <Menu.Menu position='right'>
                         <Dropdown item text='Language'>
                             <Dropdown.Menu>
@@ -21,14 +28,12 @@ export default function Navi() {
                                 <Dropdown.Item>Spanish</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
+                        {isAuthenticated ? <SignedIn signOut={handleSignOut} /> : <SignedOut signIn={handleSignIn} />}
 
-                      <SignedOut/>
-                      <SignedIn/>
 
                     </Menu.Menu>
                 </Container>
             </Menu>
-
         </div>
     )
 }
