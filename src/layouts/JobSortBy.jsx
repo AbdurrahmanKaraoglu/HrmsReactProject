@@ -1,5 +1,5 @@
 import React from 'react'
-import { Header, Icon, Dropdown, Container, Menu } from 'semantic-ui-react'
+import {Dropdown, Menu } from 'semantic-ui-react'
 
 const options = [
     {
