@@ -12,6 +12,7 @@ import JobPositionList from '../pages/JobPositionList'
 import JobSeekerList from '../pages/JobSeekerList'
 import JobPostingFormReleaseDateList from '../pages/JobPostingFormReleaseDateList'
 import JobPostingFormEmployerCompanyNameList from '../pages/JobPostingFormEmployerCompanyNameList'
+import JobSeekerResumeList from '../pages/JobSeekerResumeList'
 
 
 export default function Dashboard() {
@@ -38,6 +39,9 @@ export default function Dashboard() {
                         <Route exact path="/activejobpostingssortedbydate" component={JobPostingFormReleaseDateList} />
 
                         <Route path="/activejobpostingsofafirms/:name" component={JobPostingFormEmployerCompanyNameList} />
+
+                        <Route exact path="/allcvinformationofthecandidate/:id" component={JobSeekerResumeList} />
+                        
 
                         <Route path="/jobpostingform/:id" component={JobPostingFormDetail} />
                         <Route path="/employers" component={EmployerList} />

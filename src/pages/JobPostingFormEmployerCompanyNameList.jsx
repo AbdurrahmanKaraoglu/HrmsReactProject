@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useParams } from 'react-router';
 import { Icon, Table, Menu } from 'semantic-ui-react';
 import JobPostingFormService from '../services/jobPostingFormService';
 
 export default function JobPostingFormEmployerCompanyNameList() {
-    const [jobPostings, setJobPostings] = useState({});
+    let {name} = useParams();
+    const [jobPostings, setJobPostings] = useState([]);
 
-    useEffect(() => {
+    useState(() => {
         let jobPostingFormService = new JobPostingFormService();
-        jobPostingFormService.getByIsActiveAndEmployerCompanyName().then(result => setJobPostings(result.data.data))
+        jobPostingFormService.getByIsActiveAndEmployerCompanyName(name).then(result => setJobPostings(result.data.data))
     }, [])
     return (
         <div>
@@ -25,7 +27,7 @@ export default function JobPostingFormEmployerCompanyNameList() {
 
                 <Table.Body>
                     {
-                        jobPostings.map(jobPosting => (
+                        jobPostings.map((jobPosting) => (
                             <Table.Row key={jobPosting.id}>
                                 <Table.Cell>{jobPosting.employerCompanyName}</Table.Cell>
                                 <Table.Cell>{jobPosting.jobPositionTitle}</Table.Cell>

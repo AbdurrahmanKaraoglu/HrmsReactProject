@@ -32,9 +32,6 @@ export default function Navi() {
 
                             <Dropdown.Item as={NavLink} to="activejobpostingssortedbydate">Active Job Postings Sorted by Date</Dropdown.Item>
 
-                            <Dropdown.Item as={NavLink} to="activejobpostingsofafirms">Active Job Postings of a Firm</Dropdown.Item>
-
-                            <Dropdown.Item as={NavLink} to="allcvinformationofthecandidate">All CV Information of the Candidate</Dropdown.Item>
 
                         </Dropdown.Menu>
                     </Dropdown>

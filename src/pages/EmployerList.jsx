@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Icon, Table, Menu } from 'semantic-ui-react'
 import EmpoleyerService from '../services/employerService';
+import { Link } from 'react-router-dom';
 
 export default function EmployerList() {
     const [employers, setEmployers] = useState([]);
@@ -27,7 +28,7 @@ export default function EmployerList() {
                             <Table.Row key={employer.id}>
                                 <Table.Cell>{employer.id}</Table.Cell>
                                 <Table.Cell>{employer.email}</Table.Cell>
-                                <Table.Cell>{employer.companyName}</Table.Cell>
+                                <Table.Cell> <Link to={`/activejobpostingsofafirms/${employer.companyName}`}>{employer.companyName} </Link></Table.Cell>
                                 <Table.Cell>{employer.webAddress}</Table.Cell>
                                 <Table.Cell>{employer.phoneNumber}</Table.Cell>
                             </Table.Row>
