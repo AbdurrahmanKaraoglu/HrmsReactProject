@@ -3,7 +3,7 @@ import AccordionMenu from './AccordionMenu'
 import FilterMenu from './FilterMenu'
 import JobSortBy from './JobSortBy'
 import Footer from './Footer'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Segment, Container } from 'semantic-ui-react'
 import { Route } from 'react-router'
 import JobPostingFormList from '../pages/JobPostingFormList'
 import JobPostingFormDetail from '../pages/JobPostingFormDetail'
@@ -17,16 +17,16 @@ import JobSeekerResumeList from '../pages/JobSeekerResumeList'
 
 export default function Dashboard() {
     return (
-        <div>
+
+        <Container>
             <FilterMenu />
             <JobSortBy />
-
-
-
             <Grid>
                 <Grid.Row >
                     <Grid.Column width={3}>
-                        <AccordionMenu />
+                        <Segment>
+                            <AccordionMenu />
+                        </Segment>
                     </Grid.Column>
                     <Grid.Column width={13}>
                         <Route exact path="/" component={JobPostingFormList} />
@@ -34,24 +34,24 @@ export default function Dashboard() {
                         <Route exact path="/jobpostingform" component={JobPostingFormList} />
 
                         <Route exact path="/activejobpostings" component={JobPostingFormList} />
-                        
+
 
                         <Route exact path="/activejobpostingssortedbydate" component={JobPostingFormReleaseDateList} />
 
-                        <Route path="/activejobpostingsofafirms/:name" component={JobPostingFormEmployerCompanyNameList} />
+                        <Route exact path="/activejobpostingsofafirms/:name" component={JobPostingFormEmployerCompanyNameList} />
 
                         <Route exact path="/allcvinformationofthecandidate/:id" component={JobSeekerResumeList} />
-                        
 
-                        <Route path="/jobpostingform/:id" component={JobPostingFormDetail} />
-                        <Route path="/employers" component={EmployerList} />
-                        <Route path="/jobpositions" component={JobPositionList} />
-                        <Route path="/jobseekers" component={JobSeekerList} />
+                        <Route exact path="/jobpostingform/:id" component={JobPostingFormDetail} />
+                        <Route exact path="/employers" component={EmployerList} />
+                        <Route exact path="/jobpositions" component={JobPositionList} />
+                        <Route exact path="/jobseekers" component={JobSeekerList} />
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
+
             <Footer />
-        </div>
+        </Container>
     );
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Icon, Table, Menu } from 'semantic-ui-react';
 import ResumeService from '../services/resumeService';
@@ -7,7 +7,7 @@ export default function JobSeekerResumeList() {
     let {id} = useParams();
     const [jobSeekerResume, setjobSeekerResume] = useState([]);
 
-    useState(() => {
+    useEffect(() => {
         let resumeService = new ResumeService();
         resumeService.getAllByJobSeeker(id).then(result => setjobSeekerResume(result.data.data))
     }, [])
@@ -46,8 +46,6 @@ export default function JobSeekerResumeList() {
                                 <Table.Cell>{resume.linkedinAddress}</Table.Cell>
                                 <Table.Cell>{resume.coverLetter}</Table.Cell>
                                 <Table.Cell>{resume.createdDate}</Table.Cell>
-
-                                
 
                                 <Table.Cell>{resume.educationInformations.id}</Table.Cell>
                                 <Table.Cell>{resume.educationInformations.schoolName}</Table.Cell>
