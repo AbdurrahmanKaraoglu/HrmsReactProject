@@ -1,7 +1,6 @@
 import React from 'react'
-import AccordionMenu from './FilterSubMenuLayouts/FilterSubMenu'
 import JobSortBy from './JobSortBy'
-import Footer from './Footer'
+import Footer from './FooterLayouts/Footer'
 import { Grid, Container } from 'semantic-ui-react'
 import { Route } from 'react-router'
 import JobPostingFormList from '../pages/JobPostingFormList'
@@ -13,6 +12,7 @@ import JobPostingFormReleaseDateList from '../pages/JobPostingFormReleaseDateLis
 import JobPostingFormEmployerCompanyNameList from '../pages/JobPostingFormEmployerCompanyNameList'
 import JobSeekerResumeList from '../pages/JobSeekerResumeList'
 import HomePage from '../pages/HomePage/HomePage'
+import FilterSubMenu from './FilterSubMenuLayouts/FilterSubMenu'
 
 
 export default function Dashboard() {
@@ -23,10 +23,10 @@ export default function Dashboard() {
             
             <Grid>
                 <Grid.Row >
-                    <Grid.Column width={3}>
-                        <AccordionMenu />
+                    <Grid.Column width={4}>
+                    <FilterSubMenu/>
                     </Grid.Column>
-                    <Grid.Column width={13}>
+                    <Grid.Column width={12}>
                     <JobSortBy />
                         <Route exact path="/" component={HomePage} />
 
@@ -52,6 +52,7 @@ export default function Dashboard() {
 
             <Footer />
         </Container>
+        
     );
 }
 
