@@ -9,6 +9,7 @@ export default function EmployerList() {
         let empoleyerService = new EmpoleyerService();
         empoleyerService.getEmployer().then(result => setEmployers(result.data.data))
     }, [])
+    console.log(employers);
     return (
         <div>
             <Table celled selectable>

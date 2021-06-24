@@ -1,9 +1,8 @@
 import React from 'react'
-import AccordionMenu from './AccordionMenu'
-import FilterMenu from './FilterMenu'
+import AccordionMenu from './FilterSubMenuLayouts/FilterSubMenu'
 import JobSortBy from './JobSortBy'
 import Footer from './Footer'
-import { Grid, Segment, Container } from 'semantic-ui-react'
+import { Grid, Container } from 'semantic-ui-react'
 import { Route } from 'react-router'
 import JobPostingFormList from '../pages/JobPostingFormList'
 import JobPostingFormDetail from '../pages/JobPostingFormDetail'
@@ -13,25 +12,26 @@ import JobSeekerList from '../pages/JobSeekerList'
 import JobPostingFormReleaseDateList from '../pages/JobPostingFormReleaseDateList'
 import JobPostingFormEmployerCompanyNameList from '../pages/JobPostingFormEmployerCompanyNameList'
 import JobSeekerResumeList from '../pages/JobSeekerResumeList'
+import HomePage from '../pages/HomePage/HomePage'
 
 
 export default function Dashboard() {
     return (
 
         <Container>
-            <FilterMenu />
-            <JobSortBy />
+            {/* <FilterMenu /> */}
+            
             <Grid>
                 <Grid.Row >
                     <Grid.Column width={3}>
-                        <Segment>
-                            <AccordionMenu />
-                        </Segment>
+                        <AccordionMenu />
                     </Grid.Column>
                     <Grid.Column width={13}>
-                        <Route exact path="/" component={JobPostingFormList} />
+                    <JobSortBy />
+                        <Route exact path="/" component={HomePage} />
 
                         <Route exact path="/jobpostingform" component={JobPostingFormList} />
+
 
                         <Route exact path="/activejobpostings" component={JobPostingFormList} />
 
@@ -40,7 +40,7 @@ export default function Dashboard() {
 
                         <Route exact path="/activejobpostingsofafirms/:name" component={JobPostingFormEmployerCompanyNameList} />
 
-                        <Route exact path="/allcvinformationofthecandidate/:id" component={JobSeekerResumeList} />
+                        <Route path="/allcvinformationofthecandidate/:id" component={JobSeekerResumeList} />
 
                         <Route exact path="/jobpostingform/:id" component={JobPostingFormDetail} />
                         <Route exact path="/employers" component={EmployerList} />

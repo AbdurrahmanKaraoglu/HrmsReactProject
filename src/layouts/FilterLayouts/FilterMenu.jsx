@@ -14,7 +14,7 @@ const DropdownExampleCloseOnChange = () => (
         <Dropdown
             multiple
             selection
-           
+
             placeholder='Choose an option'
         />{' '}
         <Dropdown

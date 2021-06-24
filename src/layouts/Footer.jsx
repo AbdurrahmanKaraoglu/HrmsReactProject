@@ -5,7 +5,7 @@ export default function Footer() {
         <Container>
         <div className='my-footer'>
           <hr />
-          <span>Made by AbdurrahmanKaraoglu - 2021</span>
+          <span>Made by Abdurrahman Karaoglu - 2021</span>
           <a
             href='https://github.com/AbdurrahmanKaraoglu'
             target='_blank'
