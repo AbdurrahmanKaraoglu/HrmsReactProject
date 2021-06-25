@@ -25,8 +25,8 @@ export default function JobSeekerList() {
                     {
                         jobSeekers.map(jobSeeker => (
                             <Table.Row key={jobSeeker.id}>
-                                <Table.Cell> <Link to={`/allcvinformationofthecandidate/${jobSeeker.id}`}>{jobSeeker.id} </Link> </Table.Cell>
-                                <Table.Cell>{jobSeeker.firstName}</Table.Cell>
+                                <Table.Cell> {jobSeeker.id}</Table.Cell>
+                                <Table.Cell><Link to={`/allcvinformationofthecandidatepage/${jobSeeker.id}`}>{jobSeeker.firstName} </Link></Table.Cell>
                                 <Table.Cell>{jobSeeker.lastName}</Table.Cell>
                                 <Table.Cell>{jobSeeker.dateOfBirth}</Table.Cell>
                                 <Table.Cell>{jobSeeker.email}</Table.Cell>

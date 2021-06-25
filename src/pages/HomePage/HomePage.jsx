@@ -3,10 +3,17 @@ import { Item, Label, Button, Icon } from 'semantic-ui-react'
 import JobPostingFormService from '../../services/jobPostingFormService';
 import './HomePage.css'
 import TablePagination from '@material-ui/core/TablePagination';
+import { useHistory } from "react-router";
 
 
 
 export default function HomePage() {
+
+    const history = useHistory()
+    function handleDropdownClick () {
+        history.push('/homepagedetail')
+    }
+
     const [jobPostings, setJobPostings] = useState([]);
     useEffect(() => {
         let jobPostingFormService = new JobPostingFormService();
@@ -47,7 +54,7 @@ export default function HomePage() {
                                 </Item.Extra>
                                 <Item.Extra>
                                     <div>
-                                        <Button primary floated='right'>
+                                        <Button onClick={handleDropdownClick} primary floated='right'>
                                             Detaylar
                                             <Icon name='right chevron' />
                                         </Button>

@@ -11,9 +11,11 @@ import JobSeekerList from '../pages/JobSeeker/JobSeekerList'
 import JobPostingFormReleaseDateList from '../pages/JobPostingForm/JobPostingFormReleaseDate/JobPostingFormReleaseDateList'
 import JobPostingFormEmployerCompanyNameList from '../pages/JobPostingForm/JobPostingFormEmployerCompanyName/JobPostingFormEmployerCompanyNameList'
 import JobSeekerResumeList from '../pages/Resume/JobSeekerResumeList'
+import JobSeekerResumePage from '../pages/Resume/JobSeekerResumePage/JobSeekerResumePage'
 import HomePage from '../pages/HomePage/HomePage'
 import FilterSubMenu from './FilterSubMenuLayouts/FilterSubMenu'
 import JobPostingFormReleaseDatePage from '../pages/JobPostingForm/JobPostingFormReleaseDate/JobPostingFormReleaseDatePage'
+import HomePageDetail from '../pages/HomePage/HomePageDetail'
 
 
 export default function Dashboard() {
@@ -33,6 +35,9 @@ export default function Dashboard() {
 
                         <Route exact path="/jobpostingform" component={JobPostingFormList} />
 
+                        <Route exact path="/homepagedetail" component={HomePageDetail} />
+                        
+
 
                         <Route exact path="/activejobpostings" component={JobPostingFormList} />
 
@@ -45,7 +50,9 @@ export default function Dashboard() {
 
                         <Route exact path="/activejobpostingsofafirms/:name" component={JobPostingFormEmployerCompanyNameList} />
 
-                        <Route path="/allcvinformationofthecandidate/:id" component={JobSeekerResumeList} />
+                        <Route path="/allcvinformationofthecandidatelist" component={JobSeekerResumeList} />
+
+                        <Route path="/allcvinformationofthecandidatepage/:id" component={JobSeekerResumePage} />
 
                         <Route exact path="/jobpostingform/:id" component={JobPostingFormDetail} />
                         <Route exact path="/employers" component={EmployerList} />

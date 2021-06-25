@@ -29,7 +29,7 @@ export default function EmployerList() {
                             <Table.Row key={employer.id}>
                                 <Table.Cell>{employer.id}</Table.Cell>
                                 <Table.Cell>{employer.email}</Table.Cell>
-                                <Table.Cell className='companyName' textAlign='center'> <Link to={`/activejobpostingsofafirms/${employer.companyName}`}>{employer.companyName} </Link></Table.Cell>
+                                <Table.Cell className='companyName'> <Link to={`/activejobpostingsofafirms/${employer.companyName}`}>{employer.companyName} </Link></Table.Cell>
                                 <Table.Cell>{employer.webAddress}</Table.Cell>
                                 <Table.Cell>{employer.phoneNumber}</Table.Cell>
                             </Table.Row>
