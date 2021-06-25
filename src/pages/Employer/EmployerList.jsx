@@ -1,40 +1,44 @@
 import React, { useState, useEffect } from 'react'
 import { Icon, Table, Menu } from 'semantic-ui-react'
-import JobSeekerService from '../services/jobSeekerService';
+import EmpoleyerService from '../../services/employerService';
 import { Link } from 'react-router-dom';
-export default function JobSeekerList() {
-    const [jobSeekers, setJobSeekers] = useState([]);
+import './EmployerList.css'
+
+export default function EmployerList() {
+    const [employers, setEmployers] = useState([]);
     useEffect(() => {
-        let jobSeekerService = new JobSeekerService();
-        jobSeekerService.getJobSeeker().then(result => setJobSeekers(result.data.data))
+        let empoleyerService = new EmpoleyerService();
+        empoleyerService.getEmployer().then(result => setEmployers(result.data.data))
     }, [])
     return (
         <div>
-            <Table celled selectable>
-                <Table.Header>
+            <Table celled selectable >
+                <Table.Header >
                     <Table.Row>
-                        <Table.HeaderCell>İd</Table.HeaderCell>
-                        <Table.HeaderCell>First Name</Table.HeaderCell>
-                        <Table.HeaderCell>Last Name</Table.HeaderCell>
-                        <Table.HeaderCell>Date Of Birth</Table.HeaderCell>
+                        <Table.HeaderCell >İd</Table.HeaderCell>
                         <Table.HeaderCell>Email</Table.HeaderCell>
+                        <Table.HeaderCell>Company Name</Table.HeaderCell>
+                        <Table.HeaderCell>Web Address</Table.HeaderCell>
+                        <Table.HeaderCell>Phone Number</Table.HeaderCell>
                     </Table.Row>
                 </Table.Header>
 
                 <Table.Body>
                     {
-                        jobSeekers.map(jobSeeker => (
-                            <Table.Row key={jobSeeker.id}>
-                                <Table.Cell> <Link to={`/allcvinformationofthecandidate/${jobSeeker.id}`}>{jobSeeker.id} </Link> </Table.Cell>
-                                <Table.Cell>{jobSeeker.firstName}</Table.Cell>
-                                <Table.Cell>{jobSeeker.lastName}</Table.Cell>
-                                <Table.Cell>{jobSeeker.dateOfBirth}</Table.Cell>
-                                <Table.Cell>{jobSeeker.email}</Table.Cell>
+                        employers.map(employer => (
+                            <Table.Row key={employer.id}>
+                                <Table.Cell>{employer.id}</Table.Cell>
+                                <Table.Cell>{employer.email}</Table.Cell>
+                                <Table.Cell className='companyName' textAlign='center'> <Link to={`/activejobpostingsofafirms/${employer.companyName}`}>{employer.companyName} </Link></Table.Cell>
+                                <Table.Cell>{employer.webAddress}</Table.Cell>
+                                <Table.Cell>{employer.phoneNumber}</Table.Cell>
                             </Table.Row>
                         ))
                     }
                 </Table.Body>
-                <Table.Footer>
+               
+            </Table>
+            <Table.Footer>
                     <Table.Row>
                         <Table.HeaderCell colSpan='3'>
                             <Menu floated='right' pagination>
@@ -52,7 +56,6 @@ export default function JobSeekerList() {
                         </Table.HeaderCell>
                     </Table.Row>
                 </Table.Footer>
-            </Table>
         </div>
     )
 }

@@ -9,8 +9,7 @@ import 'mdbreact/dist/css/mdb.css';
 export default function Footer() {
   return (
     <Container>
-
-      <hr />
+      <hr/>
       <footer>
         <section
           className="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
@@ -66,39 +65,63 @@ export default function Footer() {
               <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
 
                 <h6 className="classH6">
-                  Employer
+                  İşveren
                 </h6>
                 <p>
-                  <a href="#!" className="text-reset">Post a job</a>
+                  <a href="#!" className="text-reset">İş İlanı Yayınla</a>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">Search Resumes</a>
+                  <a href="#!" className="text-reset">Özgeçmişleri Ara</a>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">Sign in</a>
+                  <a href="#!" className="text-reset">Oturum Aç</a>
                 </p>
+
               </div>
 
               <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
 
                 <h6 className="classH6">
-                  Job Seeker
+                  İş Arayan
                 </h6>
                 <p>
-                  <a href="#!" className="text-reset">Find jobs</a>
+                  <a href="#!" className="text-reset">İş Bul</a>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">Create Resumes</a>
+                  <a href="#!" className="text-reset">Özgeçmiş Oluştur</a>
                 </p>
                 <p>
-                  <a href="#!" className="text-reset">Sign in</a>
+                  <a href="#!" className="text-reset">Oturum Aç</a>
+                </p>
+
+              </div>
+
+              <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                <h6 className="classH6">
+                  Listeler
+                </h6>
+                <p>
+                  <a href="jobpositions" className="text-reset">İş Pozisyonlarını Listele</a>
+                </p>
+                <p>
+                  <a href="employers" className="text-reset">İşverenleri Listele</a>
+                </p>
+                <p>
+                  <a href="jobseekers" className="text-reset">İş Arayanları Listele</a>
+                </p>
+                <p>
+                  <a href="activejobpostings" className="text-reset">Aktif İş İlanları</a>
+                </p>
+                <p>
+                  <a href="activejobpostingssortedbydate" className="text-reset">Tarihe Göre Sıralanmış Aktif İş İlanları</a>
                 </p>
               </div>
 
               <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
                 <h6 className="classH6">
-                  Contact
+                  İletişim
                 </h6>
                 <p><i className="fas fa-home me-3"></i> Türkiye</p>
                 <p>
@@ -120,27 +143,6 @@ export default function Footer() {
         </div>
 
       </footer>
-
-      {/* <span>Made by Abdurrahman Karaoglu - 2021</span> */}
-      {/* <a
-          href='https://github.com/AbdurrahmanKaraoglu'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='my-footer-link mr-2'
-        >
-          <Icon name='github' size='big' />
-        </a>
-        <a
-          href='https://www.linkedin.com/in/abdurrahman-karaoglu-405369207/'
-          target='_blank'
-          rel='noopener noreferrer'
-          className='my-footer-link mr-2'
-        >
-          <Icon name='linkedin' size='big' link />
-        </a> */}
-
-
     </Container >
   )
 }
-

@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import { Item, Label, Button, Icon } from 'semantic-ui-react'
-import JobPostingFormService from '../../services/jobPostingFormService';
-import './HomePage.css'
+import JobPostingFormService from '../../../services/jobPostingFormService';
+import './JobPostingFormReleaseDatePage.css'
 import TablePagination from '@material-ui/core/TablePagination';
 
-
-
-export default function HomePage() {
+export default function JobPostingFormReleaseDatePage() {
     const [jobPostings, setJobPostings] = useState([]);
     useEffect(() => {
         let jobPostingFormService = new JobPostingFormService();
-        jobPostingFormService.getJobPostingForm().then(result => setJobPostings(result.data.data))
-    }, []);
+        jobPostingFormService.getJobPostingFormReleaseDate().then(result => setJobPostings(result.data.data))
+    }, [])
 
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
@@ -28,6 +26,7 @@ export default function HomePage() {
         <div className="myDiv">
             {
                 jobPostings.map((jobPosting, i) => (
+
                     <Item.Group key={i} divided>
                         <Item key={i} >
                             <Item.Image src={jobPosting.employerCompanyPictureAddress} size='small' />
@@ -38,9 +37,6 @@ export default function HomePage() {
                                 </Item.Meta>
                                 <Item.Description> {jobPosting.jobDescription}</Item.Description>
                                 <Item.Extra>
-                                    <Label icon='map marker alternate' content={jobPosting.citieCityName} />
-                                    <Label icon='dollar sign' content={jobPosting.minimumSalary} />
-                                    <Label icon='dollar sign' content={jobPosting.maximumSalary} />
                                     <Label icon='user circle outline' content={jobPosting.numberOfOpenPositions} />
                                     <Label icon='calendar alternate outline' content={jobPosting.releaseDate} />
                                     <Label icon='calendar alternate' content={jobPosting.applicationDeadline} />
@@ -57,9 +53,7 @@ export default function HomePage() {
                         </Item>
                     </Item.Group>
                 ))
-
             }
-
             <TablePagination
                 component="div"
                 count={100}
@@ -69,7 +63,6 @@ export default function HomePage() {
                 onChangeRowsPerPage={handleChangeRowsPerPage}
                 rowsPerPageOptions={[10, 50, { value: -1, label: 'All' }]}
             >
-                
             </TablePagination>
         </div>
     )

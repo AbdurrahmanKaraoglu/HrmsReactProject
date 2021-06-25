@@ -1,23 +1,26 @@
 import React, { useState, useEffect } from 'react'
 import { Icon, Table, Menu } from 'semantic-ui-react'
-import JobPostingFormService from '../services/jobPostingFormService';
+import JobPostingFormService from '../../services/jobPostingFormService';
 
-export default function JobPostingFormReleaseDateList() {
-
+export default function JobPostingFormList() {
     const [jobPostings, setJobPostings] = useState([]);
     useEffect(() => {
         let jobPostingFormService = new JobPostingFormService();
-        jobPostingFormService.getJobPostingFormReleaseDate().then(result => setJobPostings(result.data.data))
+        jobPostingFormService.getJobPostingForm().then(result => setJobPostings(result.data.data))
     }, [])
     return (
         <div>
             <Table celled selectable>
                 <Table.Header>
                     <Table.Row>
-                        <Table.HeaderCell>Employer CompanyName</Table.HeaderCell>
+                        <Table.HeaderCell>İd</Table.HeaderCell>
+                        <Table.HeaderCell>Company Name</Table.HeaderCell>
                         <Table.HeaderCell>Job Position</Table.HeaderCell>
+                        <Table.HeaderCell>City Name</Table.HeaderCell>
                         <Table.HeaderCell>Job Description</Table.HeaderCell>
                         <Table.HeaderCell>Number Of Open Positions</Table.HeaderCell>
+                        <Table.HeaderCell>Maximum Salary</Table.HeaderCell>
+                        <Table.HeaderCell>Minimum Salary</Table.HeaderCell>
                         <Table.HeaderCell>Release Date</Table.HeaderCell>
                         <Table.HeaderCell>Application Deadline</Table.HeaderCell>
                     </Table.Row>
@@ -27,11 +30,16 @@ export default function JobPostingFormReleaseDateList() {
                     {
                         jobPostings.map(jobPosting => (
                             <Table.Row key={jobPosting.id}>
-                                <Table.Cell>{jobPosting.employerCompanyName}</Table.Cell>
+                                <Table.Cell>{jobPosting.id}</Table.Cell>
+                                <Table.Cell>
+                                    {jobPosting.employerCompanyName}
+                                </Table.Cell>
                                 <Table.Cell>{jobPosting.jobPositionTitle}</Table.Cell>
+                                <Table.Cell>{jobPosting.citieCityName}</Table.Cell>
                                 <Table.Cell>{jobPosting.jobDescription}</Table.Cell>
                                 <Table.Cell>{jobPosting.numberOfOpenPositions}</Table.Cell>
-                                
+                                <Table.Cell>{jobPosting.maximumSalary}</Table.Cell>
+                                <Table.Cell>{jobPosting.minimumSalary}</Table.Cell>
                                 <Table.Cell>{jobPosting.releaseDate}</Table.Cell>
                                 <Table.Cell>{jobPosting.applicationDeadline}</Table.Cell>
                             </Table.Row>

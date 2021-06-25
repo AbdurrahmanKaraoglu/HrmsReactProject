@@ -3,16 +3,17 @@ import JobSortBy from './JobSortBy'
 import Footer from './FooterLayouts/Footer'
 import { Grid, Container } from 'semantic-ui-react'
 import { Route } from 'react-router'
-import JobPostingFormList from '../pages/JobPostingFormList'
-import JobPostingFormDetail from '../pages/JobPostingFormDetail'
-import EmployerList from '../pages/EmployerList'
-import JobPositionList from '../pages/JobPositionList'
-import JobSeekerList from '../pages/JobSeekerList'
-import JobPostingFormReleaseDateList from '../pages/JobPostingFormReleaseDateList'
-import JobPostingFormEmployerCompanyNameList from '../pages/JobPostingFormEmployerCompanyNameList'
-import JobSeekerResumeList from '../pages/JobSeekerResumeList'
+import JobPostingFormList from '../pages/JobPostingForm/JobPostingFormList'
+import JobPostingFormDetail from '../pages/JobPostingForm/JobPostingFormDetail'
+import EmployerList from '../pages/Employer/EmployerList'
+import JobPositionList from '../pages/JobPosition/JobPositionList'
+import JobSeekerList from '../pages/JobSeeker/JobSeekerList'
+import JobPostingFormReleaseDateList from '../pages/JobPostingForm/JobPostingFormReleaseDate/JobPostingFormReleaseDateList'
+import JobPostingFormEmployerCompanyNameList from '../pages/JobPostingForm/JobPostingFormEmployerCompanyName/JobPostingFormEmployerCompanyNameList'
+import JobSeekerResumeList from '../pages/Resume/JobSeekerResumeList'
 import HomePage from '../pages/HomePage/HomePage'
 import FilterSubMenu from './FilterSubMenuLayouts/FilterSubMenu'
+import JobPostingFormReleaseDatePage from '../pages/JobPostingForm/JobPostingFormReleaseDate/JobPostingFormReleaseDatePage'
 
 
 export default function Dashboard() {
@@ -36,7 +37,11 @@ export default function Dashboard() {
                         <Route exact path="/activejobpostings" component={JobPostingFormList} />
 
 
-                        <Route exact path="/activejobpostingssortedbydate" component={JobPostingFormReleaseDateList} />
+                        <Route exact path="/activejobpostingssortedbydatelist" component={JobPostingFormReleaseDateList} />
+
+                        <Route exact path="/activejobpostingssortedbydatepage" component={JobPostingFormReleaseDatePage} />
+
+                        
 
                         <Route exact path="/activejobpostingsofafirms/:name" component={JobPostingFormEmployerCompanyNameList} />
 

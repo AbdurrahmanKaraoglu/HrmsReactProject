@@ -1,38 +1,45 @@
 import React from 'react'
-import {Dropdown, Menu } from 'semantic-ui-react'
+import {Menu,Button } from 'semantic-ui-react'
+import { useHistory } from "react-router";
 
-const options = [
-    {
-        key: 'today',
-        text: 'today',
-        value: 'today',
-        content: 'Today',
-    },
-    {
-        key: 'this week',
-        text: 'this week',
-        value: 'this week',
-        content: 'This Week',
-    },
-    {
-        key: 'this month',
-        text: 'this month',
-        value: 'this month',
-        content: 'This Month',
-    },
-]
+// const options = [
+//     {
+//         key: 'new',
+//         text: 'new',
+//         value: 'new',
+//         content: 'Yeniden Eskiye',
+//     },
+//     // {
+//     //     key: 'suggested',
+//     //     text: 'suggested',
+//     //     value: 'suggested',
+//     //     content: 'Önerilen',
+//     // },
+// ]
+
+
+
+
 export default function JobSortBy() {
+    const history = useHistory()
+    function handleDropdownClick () {
+        history.push('/activejobpostingssortedbydatepage')
+    }
+        
     return (
         <div>
             <Menu>
                 <Menu.Menu position='right'>
-                    <Dropdown
+                    {/* <Dropdown
                         item
                         simple
-                        text='Sort By'
+                        text='Sıralama'
                         direction='right'
                         options={options}
-                    />
+                        onClick={handleDropdownClick}
+                        selection
+                    /> */}
+                    <Button  onClick={handleDropdownClick}> Sırala</Button>
                 </Menu.Menu>
             </Menu>
         </div>

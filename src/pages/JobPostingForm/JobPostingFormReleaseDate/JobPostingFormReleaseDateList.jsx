@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
-import { useParams } from 'react-router';
-import { Icon, Table, Menu } from 'semantic-ui-react';
-import JobPostingFormService from '../services/jobPostingFormService';
+import React, { useState, useEffect } from 'react'
+import { Icon, Table, Menu } from 'semantic-ui-react'
+import JobPostingFormService from '../../../services/jobPostingFormService';
 
-export default function JobPostingFormEmployerCompanyNameList() {
-    let {name} = useParams();
+export default function JobPostingFormReleaseDateList() {
+
     const [jobPostings, setJobPostings] = useState([]);
-
-    useState(() => {
+    useEffect(() => {
         let jobPostingFormService = new JobPostingFormService();
-        jobPostingFormService.getByIsActiveAndEmployerCompanyName(name).then(result => setJobPostings(result.data.data))
+        jobPostingFormService.getJobPostingFormReleaseDate().then(result => setJobPostings(result.data.data))
     }, [])
     return (
         <div>
@@ -27,13 +25,13 @@ export default function JobPostingFormEmployerCompanyNameList() {
 
                 <Table.Body>
                     {
-                        jobPostings.map((jobPosting) => (
+                        jobPostings.map(jobPosting => (
                             <Table.Row key={jobPosting.id}>
                                 <Table.Cell>{jobPosting.employerCompanyName}</Table.Cell>
                                 <Table.Cell>{jobPosting.jobPositionTitle}</Table.Cell>
                                 <Table.Cell>{jobPosting.jobDescription}</Table.Cell>
                                 <Table.Cell>{jobPosting.numberOfOpenPositions}</Table.Cell>
-
+                                
                                 <Table.Cell>{jobPosting.releaseDate}</Table.Cell>
                                 <Table.Cell>{jobPosting.applicationDeadline}</Table.Cell>
                             </Table.Row>

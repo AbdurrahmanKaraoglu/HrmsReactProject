@@ -9,3 +9,11 @@ span{
     font-weight: bold;
     font-size: 15px;
 }
+
+p{
+    color: #757575;
+}
+
+p:hover{
+    color: rgb(0, 0, 0);
+}

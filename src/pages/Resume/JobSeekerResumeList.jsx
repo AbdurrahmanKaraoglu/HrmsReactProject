@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import ResumeService from '../services/resumeService';
+import ResumeService from '../../services/resumeService';
 import { Card, Image, Table } from 'semantic-ui-react'
 
 
