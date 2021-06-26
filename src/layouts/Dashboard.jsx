@@ -16,6 +16,7 @@ import HomePage from '../pages/HomePage/HomePage'
 import FilterSubMenu from './FilterSubMenuLayouts/FilterSubMenu'
 import JobPostingFormReleaseDatePage from '../pages/JobPostingForm/JobPostingFormReleaseDate/JobPostingFormReleaseDatePage'
 import HomePageDetail from '../pages/HomePage/HomePageDetail'
+import JobPostingFormAdd from '../pages/JobPostingForm/JobPostingFormAdd/JobPostingFormAdd'
 
 
 export default function Dashboard() {
@@ -33,9 +34,13 @@ export default function Dashboard() {
                     <JobSortBy />
                         <Route exact path="/" component={HomePage} />
 
+                        <Route exact path="/homepagedetail" component={HomePageDetail} />
+
                         <Route exact path="/jobpostingform" component={JobPostingFormList} />
 
-                        <Route exact path="/homepagedetail" component={HomePageDetail} />
+                        {/* <Route exact path="/jobpostingform/:id" component={JobPostingFormDetail} /> */}
+
+                        <Route exact path="/jobpostingform/add" component={JobPostingFormAdd} />
                         
 
 
@@ -54,7 +59,7 @@ export default function Dashboard() {
 
                         <Route path="/allcvinformationofthecandidatepage/:id" component={JobSeekerResumePage} />
 
-                        <Route exact path="/jobpostingform/:id" component={JobPostingFormDetail} />
+                        
                         <Route exact path="/employers" component={EmployerList} />
                         <Route exact path="/jobpositions" component={JobPositionList} />
                         <Route exact path="/jobseekers" component={JobSeekerList} />
