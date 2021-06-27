@@ -11,4 +11,8 @@ export default class JobPostingFormService{
     getByIsActiveAndEmployerCompanyName(companyName){
         return axios.get("http://localhost:8080/api/jobpostingforms/getByIsActiveAndEmployerCompanyName?companyName=" + companyName);
     }
+
+    addJobPosting(values){
+        return axios.post("http://localhost:8080/api/jobpostingforms/add",values)
+    }
 }

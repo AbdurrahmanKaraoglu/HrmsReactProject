@@ -10,6 +10,7 @@ import { useHistory } from "react-router";
 export default function HomePage() {
 
     const history = useHistory()
+    
     function handleDropdownClick () {
         history.push('/homepagedetail')
     }

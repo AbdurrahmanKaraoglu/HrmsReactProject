@@ -4,7 +4,6 @@ import Footer from './FooterLayouts/Footer'
 import { Grid, Container } from 'semantic-ui-react'
 import { Route } from 'react-router'
 import JobPostingFormList from '../pages/JobPostingForm/JobPostingFormList'
-import JobPostingFormDetail from '../pages/JobPostingForm/JobPostingFormDetail'
 import EmployerList from '../pages/Employer/EmployerList'
 import JobPositionList from '../pages/JobPosition/JobPositionList'
 import JobSeekerList from '../pages/JobSeeker/JobSeekerList'
@@ -17,6 +16,7 @@ import FilterSubMenu from './FilterSubMenuLayouts/FilterSubMenu'
 import JobPostingFormReleaseDatePage from '../pages/JobPostingForm/JobPostingFormReleaseDate/JobPostingFormReleaseDatePage'
 import HomePageDetail from '../pages/HomePage/HomePageDetail'
 import JobPostingFormAdd from '../pages/JobPostingForm/JobPostingFormAdd/JobPostingFormAdd'
+import Topbar from '../components/topbar/Topbar'
 
 
 export default function Dashboard() {
@@ -32,6 +32,9 @@ export default function Dashboard() {
                     </Grid.Column>
                     <Grid.Column width={12}>
                     <JobSortBy />
+
+                    <Route exact path="/topbar" component={Topbar} />
+
                         <Route exact path="/" component={HomePage} />
 
                         <Route exact path="/homepagedetail" component={HomePageDetail} />

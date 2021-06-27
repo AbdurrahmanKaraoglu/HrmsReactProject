@@ -1,7 +1,15 @@
-.App {
+/* .App {
   text-align: center;
 }
 
 .ui.main.container{
   margin-top: 5em;
+} */
+
+.container{
+  display: flex;
+}
+.others{
+  flex: 4;
+  background-color:teal;
 }
