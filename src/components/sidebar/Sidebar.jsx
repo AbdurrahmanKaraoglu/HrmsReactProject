@@ -7,7 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 const BorderLinearProgress = withStyles((theme) => ({
     root: {
-        height:10,
+        height: 5,
         borderRadius: 5,
     },
     colorPrimary: {
@@ -26,27 +26,30 @@ export default function Sidebar() {
             <div className="sidebarWrapper">
                 <div className="sidebarMenu">
                     <h3 className="sidebarTitle">Dashboard</h3>
-                    <ul>
-                    <li className="sidebarListItem">
-                            <Card className="card">
-                                <img src="https://avatars.githubusercontent.com/u/74272647?s=400&u=5d48bfa58627f417e64727a5a8528e024bb85246&v=4" alt="" className="ımage" />
-                                <Card.Content className="cardcontent">
-                                    <Card.Header className="cardheader">Company Name</Card.Header>
-                                    <Card.Meta className="cardmeta">@username</Card.Meta>
-                                </Card.Content>
-                            </Card>
-                            
+                    <ul className="sidebarList">
+                        <li className="sidebarListItem">
+                            <img src="https://avatars.githubusercontent.com/u/74272647?s=400&u=5d48bfa58627f417e64727a5a8528e024bb85246&v=4" alt="" className="ımage" />
+                            <div className="companyUser">
+                            </div>
+                        </li>
+                        <li className="sidebarListItem">
+                            <span className="companyName">Company Name</span>
+                        </li>
+                        <li className="sidebarListItem">
+                            <span className="companyUserName">@username</span>
                         </li>
                         <br />
-                       
-                          <label> Profile</label>
-                          <label> 80</label>
-                          <BorderLinearProgress variant="determinate" value={80} />
+                        <li className="profile">
+                            <span className="spanprofile"> Profile</span>
+                            <span className="spanprofilevalue">80%</span>
+                            <BorderLinearProgress variant="determinate" value={80} />
+
+                        </li>
                         
                         <br />
 
                         <li className="sidebarListItem">
-                            <Dashboard className="sidebarIcon"/>
+                            <Dashboard className="sidebarIcon" />
                             Dashboard
                         </li>
                         <li className="sidebarListItem">
@@ -82,7 +85,7 @@ export default function Sidebar() {
                     </ul>
                 </div>
             </div>
-             
+
         </div>
     )
 }

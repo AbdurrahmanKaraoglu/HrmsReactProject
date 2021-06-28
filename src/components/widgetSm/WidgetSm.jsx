@@ -9,37 +9,45 @@ export default function WidgetSm() {
             <ul className="widgetSmList">
                 <li className="widgetSmListItem">
                     <Work className="widgetIcon" />
-                    <span className="widgetSmUserTitle"> Graphic Designe</span>
-                </li>
-                <li className="widgetSmListItem">
-                    <div className="widgetSmUser">
-                        <LocationOn className="widgetIcon" />
-                        <span className="widgetSmUserTitle"> Los Angeles Califonia PO</span>
+                    <div className="widgetSmFeature">
+                        <span className="widgetSmFeatureTitle">Job Description:</span>
+                        <span className="widgetSmFeatureInformation">Graphic Designe</span>
                     </div>
                 </li>
                 <li className="widgetSmListItem">
-                    <div className="widgetSmUser">
-                        <Phone className="widgetIcon" />
-                        <span className="widgetSmUserTitle"> 0145636941</span>
+                    <LocationOn className="widgetIcon" />
+                    <div className="widgetSmFeature">
+                        <span className="widgetSmFeatureTitle">Location:</span>
+                        <span className="widgetSmFeatureInformation">Los Angeles Califonia PO</span>
                     </div>
                 </li>
                 <li className="widgetSmListItem">
-                    <div className="widgetSmUser">
-                        <Email className="widgetIcon" />
-                        <span className="widgetSmUserTitle"> webstrot@example.com
+                    <Phone className="widgetIcon" />
+                    <div className="widgetSmFeature">
+                        <span className="widgetSmFeatureTitle">Phone:</span>
+                        <span className="widgetSmFeatureInformation">0145636941</span>
+                    </div>
+                </li>
+                <li className="widgetSmListItem">
+                    <Email className="widgetIcon" />
+                    <div className="widgetSmFeature">
+                        <span className="widgetSmFeatureTitle">Email:</span>
+                        <span className="widgetSmFeatureInformation">webstrot@example.com
                         </span>
                     </div>
                 </li>
                 <li className="widgetSmListItem">
-                    <div className="widgetSmUser">
-                        <People className="widgetIcon" />
-                        <span className="widgetSmUserTitle"> 20-50</span>
+                    <People className="widgetIcon" />
+                    <div className="widgetSmFeature">
+                        <span className="widgetSmFeatureTitle">Compant Size:</span>
+                        <span className="widgetSmFeatureInformation">20-50</span>
                     </div>
                 </li>
                 <li className="widgetSmListItem">
-                    <div className="widgetSmUser">
-                        <Web className="widgetIcon" />
-                        <span className="widgetSmUserTitle"> www.webstrot.com
+                    <Web className="widgetIcon" />
+                    <div className="widgetSmFeature">
+                        <span className="widgetSmFeatureTitle">Website:</span>
+                        <span className="widgetSmFeatureInformation">www.webstrot.com
                         </span>
                     </div>
                 </li>

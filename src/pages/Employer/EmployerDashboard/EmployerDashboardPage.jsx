@@ -8,13 +8,15 @@ import WidgetLg from '../../../components/widgetLg/WidgetLg';
 
 export default function EmployerDashboardPage() {
     return (
-        <div className="dashboardpage">
-            <FeaturedInfo/>
+        <div className="dashboardpage2">
+          <div className="dashboardpage">
+          <FeaturedInfo/>
             <Chart data={userData} title="İlanların Analitiği" grid dataKey="Active User"/>
             <div className="dashboardpageWidgets">
                 <WidgetSm/>
                 <WidgetLg/>
             </div>
+          </div>
         </div>
     )
 }

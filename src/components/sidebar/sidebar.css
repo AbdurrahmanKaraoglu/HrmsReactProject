@@ -22,19 +22,26 @@
     color: rgb(187, 186, 186);
 }
 
-.card{
-    /* border-color: darkslateblue; */
-    align-items: center;
-    width: 150px;
-    height: 200px;
-    color: rgb(187, 186, 186);
+.ımage{
+    width: 40px;
+    border-radius: 10%;
+    object-fit: cover;
+    width: 120px;
+    height: 120px;
 }
-.cardheader{
+.companyUser{
+
+}
+.companyName{
     /* background-color: dodgerblue; */
     
 }
-.cardmeta{
+.companyUserName{
     /* background-color: forestgreen; */
+}
+
+.sidebarList{
+
 }
 .sidebarWrapper{
 padding: 20px;
@@ -48,14 +55,26 @@ color: #555;
     color: rgb(187, 186, 186);
 }
 .sidebarList{
+    margin-left: -62px;
+    margin-right: -23px;
     list-style: none;
 }
+.profile{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.spanprofile{
+   
+}
+.spanprofilevalue{
+    margin-left: 100px;
+}
+
 .sidebarListItem{
     padding: 8px;
     cursor: pointer;
-    display: flex;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 0px;
 }
 
 .sidebarListItem.active,.sidebarListItem:hover{
