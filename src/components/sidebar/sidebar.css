@@ -1,7 +1,10 @@
 .sidebar{
     flex: 1;
-    height: calc(100vh - d50px);
-    background-color: blue;
+    height: calc(100vh - 50px);
+    background-color: rgb(251, 251, 251);
+    top: 50px;
+    position: sticky;
+    border: 2px solid rgb(235, 234, 234);
 }
 
 .ımage{
@@ -9,16 +12,58 @@
     height: 100px;
     border-radius: 10%;
     cursor: pointer;
-}
-.sidebarWrapper{
+    
+    /* background-color: rgb(255, 0, 170); */
 
 }
-.sidebarMenu{
-
+.cardcontent{
+    /* background-color: red; */
+    text-align: center;
+    color: rgb(187, 186, 186);
 }
-.sidebarTitle{
 
+.card{
+    /* border-color: darkslateblue; */
+    align-items: center;
+    width: 150px;
+    height: 200px;
+    color: rgb(187, 186, 186);
 }
-.sidebarList{
+.cardheader{
+    /* background-color: dodgerblue; */
     
 }
+.cardmeta{
+    /* background-color: forestgreen; */
+}
+.sidebarWrapper{
+padding: 20px;
+color: #555;
+}
+.sidebarMenu{
+    margin-bottom: 10px;
+}
+.sidebarTitle{
+    font-size: 13px;
+    color: rgb(187, 186, 186);
+}
+.sidebarList{
+    list-style: none;
+}
+.sidebarListItem{
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.sidebarListItem.active,.sidebarListItem:hover{
+    background-color: rgb(228, 228, 250);
+}
+.sidebarIcon{
+    margin-right: 5px;
+    font-size: 20px !important;
+}
+
+

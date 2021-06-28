@@ -1,0 +1,7 @@
+.dashboardpage{
+    flex: 4;
+}
+.dashboardpageWidgets{
+    display: flex;
+    margin: 20px;
+}

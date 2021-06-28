@@ -6,14 +6,16 @@ import './App.css';
 import Topbar from './components/topbar/Topbar';
 import Sidebar from './components/sidebar/Sidebar';
 import Footer from './layouts/FooterLayouts/Footer.jsx'
+import EmployerDashboardPage from './pages/Employer/EmployerDashboard/EmployerDashboardPage';
 function App() {
   return (
     <div>
       <Topbar />
       <div className="container">
         <Sidebar />
-        <div className="others"> other pages </div>
+        <EmployerDashboardPage/>
       </div>
+      <br/>
       <Footer />
     </div>
   );

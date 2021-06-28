@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Item, Label, Button, Icon } from 'semantic-ui-react'
-import JobPostingFormService from '../../../services/jobPostingFormService';
+import JobPostingFormService from '../../../../services/jobPostingFormService';
 import './JobPostingFormReleaseDatePage.css'
 import TablePagination from '@material-ui/core/TablePagination';
 
