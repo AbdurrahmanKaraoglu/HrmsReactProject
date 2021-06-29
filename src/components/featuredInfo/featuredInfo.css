@@ -16,6 +16,9 @@
 .featuredItem{
     font-size: 20px;
   }
+  .featuredTitle{
+    font-size:17px;
+  }
   
   .featuredNumberContainer{
     margin: 10px 0px;

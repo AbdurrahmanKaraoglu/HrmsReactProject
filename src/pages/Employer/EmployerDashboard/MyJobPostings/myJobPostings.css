@@ -1,0 +1,58 @@
+.myJobPostings{
+    flex: 4;
+}
+/* .icontd{
+    padding-bottom: 1rem !important;
+    padding-top: 1.5rem !important;
+    padding-left: 1.25rem !important;
+    padding-right: .5rem !important;
+}
+.iconul{
+    display: inline-flex !important;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    list-style: none;
+}
+
+.iconli{
+    margin-right: 1rem !important;
+    padding: 8px;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 0px;
+    list-style: none;
+} */
+
+
+.jobPostingsList{
+    display: flex;
+    align-items: center;
+}
+.iconVisibility{
+    margin-right: 15px;
+    font-size: 20px !important;
+    cursor: pointer;
+    color: rgb(199, 199, 187);
+}
+.iconEdit{
+    margin-right: 15px;
+    font-size: 20px !important;
+    cursor: pointer;
+    color: rgb(199, 199, 187);
+}
+.iconDelete{
+    margin-right: 15px;
+    font-size: 20px !important;
+    cursor: pointer;
+    color: rgb(199, 199, 187);
+}
+
+.iconVisibility:hover{
+    color: rgb(31, 54, 255);
+}
+.iconEdit:hover{
+    color: rgb(19, 255, 30);
+}
+.iconDelete:hover{
+    color: rgb(255, 0, 0);
+}

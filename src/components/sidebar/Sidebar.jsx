@@ -1,6 +1,6 @@
 import React from 'react'
 import "./sidebar.css"
-import { Dashboard, Edit, Business, Work, Apps, PostAdd, LocalOffer, PowerSettingsNew, DeleteForever, Label } from '@material-ui/icons';
+import { Dashboard, Edit, Business, Work, Apps, PostAdd, LocalOffer, PowerSettingsNew, DeleteForever, List } from '@material-ui/icons';
 import { Card, Icon, Image } from 'semantic-ui-react'
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { withStyles } from '@material-ui/core/styles';
@@ -67,6 +67,10 @@ export default function Sidebar() {
                         <li className="sidebarListItem">
                             <Apps className="sidebarIcon" />
                             Uygulama
+                        </li>
+                        <li className="sidebarListItem">
+                            <List className="sidebarIcon" />
+                            İlanlarım
                         </li>
                         <li className="sidebarListItem">
                             <PostAdd className="sidebarIcon" />
