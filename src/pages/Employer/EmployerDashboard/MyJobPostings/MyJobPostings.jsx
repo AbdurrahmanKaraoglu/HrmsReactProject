@@ -1,14 +1,14 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import './myJobPostings.css'
 import { DataGrid } from '@material-ui/data-grid';
-import { Visibility, Edit, Delete, Link } from '@material-ui/icons';
+import { Visibility, Edit, Delete } from '@material-ui/icons';
 import { myJobPostingsRows } from './dummyData'
-
+import { Link } from "react-router-dom";
 
 export default function MyJobPostings() {
 
     const [data, setData] = useState(myJobPostingsRows);
-    const handleDelete = (id) =>{
+    const handleDelete = (id) => {
         setData(data.filter((item) => item.id !== id));
     }
 
@@ -89,13 +89,14 @@ export default function MyJobPostings() {
             renderCell: (params) => {
                 return (
                     <>
-                       
-                            <Visibility  className="iconVisibility" onClick={"/myjobposting/" + params} />
-                       
-                        
-                            <Edit className="iconEdit" onClick={"/edit/myjobposting/" + params}/>
-                       
-                        <Delete className="iconDelete" onClick={()=>handleDelete(params.row.id)} />
+
+                        <Link to={"/myjobposting/" + params.row.id}>
+                            <Visibility className="iconVisibility" />
+                        </Link>
+                        <Link to={"/update/myjobposting/" + params.row.id}>
+                            <Edit className="iconEdit" />
+                        </Link>
+                        <Delete className="iconDelete" onClick={() => handleDelete(params.row.id)} />
                     </>
 
                     // <div className="jobPostingsList">

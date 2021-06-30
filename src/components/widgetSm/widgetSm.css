@@ -16,10 +16,10 @@
 }
 
 .widgetSmListItem{
-    display: flex;
+     display: flex;
     align-items: center;
-    justify-content: start;
-    margin: 20px 0px;
+    /* justify-content: start; */
+   margin: 20px 0px;
 }
 
 .widgetSmFeature{

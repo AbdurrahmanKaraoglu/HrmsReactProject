@@ -1,9 +1,9 @@
 import React from 'react'
 import "./sidebar.css"
-import { Dashboard, Edit, Business, Work, Apps, PostAdd, LocalOffer, PowerSettingsNew, DeleteForever, List } from '@material-ui/icons';
-import { Card, Icon, Image } from 'semantic-ui-react'
+import { Dashboard, Edit, Business, Work, Apps, PostAdd, PowerSettingsNew, DeleteForever, List } from '@material-ui/icons';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from "react-router-dom";
 
 const BorderLinearProgress = withStyles((theme) => ({
     root: {
@@ -45,7 +45,7 @@ export default function Sidebar() {
                             <BorderLinearProgress variant="determinate" value={80} />
 
                         </li>
-                        
+
                         <br />
 
                         <li className="sidebarListItem">
@@ -73,8 +73,11 @@ export default function Sidebar() {
                             İlanlarım
                         </li>
                         <li className="sidebarListItem">
-                            <PostAdd className="sidebarIcon" />
-                            Yeni İş İlanı Yayınla
+
+                            <Link to={"/myjobposting/"}>
+                                <PostAdd className="sidebarIcon" />
+                                Yeni İş İlanı Yayınla
+                            </Link>
                         </li>
                         <hr />
                         <br />

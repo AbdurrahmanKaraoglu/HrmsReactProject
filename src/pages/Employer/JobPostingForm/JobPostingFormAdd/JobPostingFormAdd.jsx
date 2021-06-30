@@ -18,6 +18,12 @@ export default function JobPostingFormAdd() {
         let citiesService = new CitiesService();
         citiesService.getAll().then(result => setCities(result.data.data))
     }, []);
+    
+    const cityOption = cities.map((city, index) => ({
+        key: index,
+        text: city.cityName,
+        value: city.id,
+    }));
 
     // cities.map((city) =>
     //     cityOptions.push({ key: city.id, text: city.cityName, value: city.id })
@@ -33,11 +39,7 @@ export default function JobPostingFormAdd() {
         ({ key: jobPosition.id, text: jobPosition.title, value: jobPosition.id })
     );
 
-    const cityOption = cities.map((city, index) => ({
-        key: index,
-        text: city.cityName,
-        value: city.id,
-    }));
+ 
 
 
     const initialValues = { employerId: 1, citieId: 1, jobPositionId: 1, jobDescription: "", numberOfOpenPositions: 1, applicationDeadline: "", maximumSalary: "", minimumSalary: "" }

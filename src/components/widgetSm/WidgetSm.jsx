@@ -1,6 +1,6 @@
 import React from 'react'
 import "./widgetSm.css"
-import { Visibility, Work, LocationOn, Phone, Email, People, Web } from '@material-ui/icons'
+import {  Work, LocationOn, Phone, Email, People, Web } from '@material-ui/icons'
 
 export default function WidgetSm() {
     return (

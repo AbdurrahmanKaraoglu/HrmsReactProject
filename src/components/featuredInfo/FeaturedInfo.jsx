@@ -32,13 +32,3 @@ export default function FeaturedInfo() {
         </div>
     )
 }
-
-
-{/* <div className="featuredItem">
-<span className="featuredTitle">Yayınlanmış İlan Sayısı</span>
-<div className="featuredMoneyContainer">
-    <span className="featuredMoney">8</span>
-    <span className="featuredMoneyRate">-5 <ArrowDownward /></span>
-</div>
-<span className="featuredSub">Geçen Aya Kıyasla</span>
-</div> */}

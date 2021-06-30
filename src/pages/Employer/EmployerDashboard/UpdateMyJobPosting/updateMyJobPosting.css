@@ -1,0 +1,111 @@
+.updateMyJobPostings{
+    flex: 4;
+    padding: 20px;
+    border: 2px solid rgb(235, 234, 234);
+}
+.myJobPostingTitleContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 2px solid rgb(235, 234, 234);
+}
+.myJobPostingUpdateButton{
+    width: 80px;
+    border: none;
+    padding: 5px;
+    background-color: greenyellow;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+    border: 2px solid rgb(235, 234, 234);
+}
+.myJobPostingContainer{
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid rgb(235, 234, 234);
+}
+.formContainer{
+    padding: 20px;
+    border: 2px solid rgb(235, 234, 234);
+    display: flex;
+    background-color: red;
+}
+
+.selectdiv{
+    border: 2px solid rgb(235, 234, 234);
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+    box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+     display: flex;
+     flex-direction: row;
+     
+}
+.citySelect{
+   /* display: flex; */
+   flex: 2;
+   padding: 20px;
+   border: 2px solid rgb(235, 234, 234);
+   -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+   box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75);
+   flex-direction: row; 
+}
+.jobPositionSelect{
+   /* padding: 20px; */
+   flex: 2;
+   padding: 20px;
+   border: 2px solid rgb(235, 234, 234);
+   -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+   box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+
+   flex-direction: row;
+
+}
+.maxSalaryDiv{
+    padding: 20px;
+    margin-left: 20px;
+    border: 2px solid rgb(235, 234, 234);
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+    box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+
+}
+.minSalaryDiv{
+    padding: 20px;
+    margin-left: 85px;
+    border: 2px solid rgb(235, 234, 234);
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+    box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+}
+.maxminSalaryDiv{
+    border: 2px solid rgb(235, 234, 234);
+   -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+   box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.workingtypes{
+    border: 2px solid rgb(235, 234, 234);
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+    box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+     display: flex;
+}
+.applicationDeadline{
+    border: 2px solid rgb(235, 234, 234);
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+    box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+     display: flex;
+}
+.numberOfOpenPositions{
+    border: 2px solid rgb(235, 234, 234);
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+    box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+     display: flex;
+     margin-left: 85px;
+}
+.jobDescription{
+    border: 2px solid rgb(235, 234, 234);
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+    box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+     display: flex;
+}

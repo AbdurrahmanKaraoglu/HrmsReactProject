@@ -15,4 +15,7 @@ export default class JobPostingFormService{
     addJobPosting(values){
         return axios.post("http://localhost:8080/api/jobpostingforms/add",values)
     }
+    updateMyJobPosting(values){
+        return axios.put("",values)
+    }
 }

@@ -8,13 +8,12 @@ import Sidebar from './components/sidebar/Sidebar';
 import Footer from './layouts/FooterLayouts/Footer.jsx'
 import EmployerDashboardPage from './pages/Employer/EmployerDashboard/EmployerDashboardPage';
 import {
-  BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
-import EmployerUpdatePage from './pages/Employer/EmployerUpdate/EmployerUpdatePage';
+import EmployerUpdatePage from './pages/Employer/EmployerDashboard/EmployerUpdate/EmployerUpdatePage';
 import MyJobPostings from './pages/Employer/EmployerDashboard/MyJobPostings/MyJobPostings';
+import UpdateMyJobPosting from './pages/Employer/EmployerDashboard/UpdateMyJobPosting/UpdateMyJobPosting';
 function App() {
   return (
     <div>
@@ -25,8 +24,14 @@ function App() {
           <Route exact path="/">
             <EmployerDashboardPage />
           </Route>
-          <Route path="/myJobPostings">
+          <Route path="/myjobpostings">
             <MyJobPostings />
+          </Route>
+          <Route path="/update/myjobposting/:id">
+            <UpdateMyJobPosting />
+          </Route>
+          <Route path="/employerupdate">
+            <EmployerUpdatePage />
           </Route>
         </Switch>
       </div>

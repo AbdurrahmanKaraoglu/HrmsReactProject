@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react'
-import { Formik, ErrorMessage, Form, useFormik } from 'formik';
+import React from 'react'
+import { Formik, Form, useFormik } from 'formik';
 import * as Yup from 'yup';
-import { FormField, Label, Button, Dropdown } from 'semantic-ui-react';
-import HrmsTextInput from '../../../utilities/jobPostingFormControls/HrmsTextInput';
+import { Button } from 'semantic-ui-react';
+import HrmsTextInput from '../../../../utilities/jobPostingFormControls/HrmsTextInput';
 import { toast } from "react-toastify";
-import EmployerService from '../../../services/employerService';
+import EmployerService from '../../../../services/employerService';
 import './employerUpdatePage.css'
 
 export default function EmployerUpdatePage() {
@@ -22,15 +22,12 @@ export default function EmployerUpdatePage() {
         employerId: 1,
         companyName: "",
         companyPictureAddress: "",
-        email: "", 
+        email: "",
         // password: "",
         // passwordRepeat: "",
         phoneNumber: "",
         webAddress: ""
     }
-
-
-
     const schema = Yup.object({
         employerId: Yup.number().required("İş veren girilmesi zorunlu"),
 
@@ -42,17 +39,13 @@ export default function EmployerUpdatePage() {
         phoneNumber: Yup.string().required("Telefon Numarası Girmek Zorunlu"),
         webAddress: Yup.string().required("Web Adresi Girmek Zorunlu")
     })
-
-
-
     let employerService = new EmployerService();
-
     const formik = useFormik({
-        initialValues: { 
+        initialValues: {
             employerId: 1,
             companyName: "",
             companyPictureAddress: "",
-            email: "", 
+            email: "",
             // password: "",
             // passwordRepeat: "",
             phoneNumber: "",
@@ -67,21 +60,22 @@ export default function EmployerUpdatePage() {
         },
     });
 
-    const handleChangeSemantic = (value, fieldName) => {
-        formik.setFieldValue(fieldName, value);
-    };
+    // const handleChangeSemantic = (value, fieldName) => {
+    //     formik.setFieldValue(fieldName, value);
+    // };
     return (
 
         <div className="updatePage">
-            <h1>İşveren Bilgilerini Güncelle</h1>
-            <Formik
-                initialValues={initialValues}
-                validationSchema={schema}
-                onSubmit={(values) => {
-                    console.log(values);
-                }}
-            >
-                {/* "companyName": "string",
+            <div className="myJobPostingContainer">
+                <h1>İşveren Bilgilerini Güncelle</h1>
+                <Formik
+                    initialValues={initialValues}
+                    validationSchema={schema}
+                    onSubmit={(values) => {
+                        console.log(values);
+                    }}
+                >
+                    {/* "companyName": "string",
   "companyPictureAddress": "string",
   "email": "string",
   "id": 0,
@@ -89,18 +83,19 @@ export default function EmployerUpdatePage() {
   "passwordRepeat": "string",
   "phoneNumber": "string",
   "webAddress": "string" */}
-                <Form className="ui form">
-                    <HrmsTextInput name="employerId" placeholder='İş Veren İd' />
-                    <HrmsTextInput name="companyName" placeholder='Şirket Adı' />
-                    <HrmsTextInput name="companyPictureAddress" placeholder='Şirket Resim Adresi' />
-                    <HrmsTextInput name="email" placeholder='Email Adresi' />
-                    {/* <HrmsTextInput name="password" placeholder='Şifre' />
+                    <Form className="ui form">
+                        <HrmsTextInput name="employerId" placeholder='İş Veren İd' />
+                        <HrmsTextInput name="companyName" placeholder='Şirket Adı' />
+                        <HrmsTextInput name="companyPictureAddress" placeholder='Şirket Resim Adresi' />
+                        <HrmsTextInput name="email" placeholder='Email Adresi' />
+                        {/* <HrmsTextInput name="password" placeholder='Şifre' />
                     <HrmsTextInput name="passwordRepeat" placeholder='Şifre Tekrarı' /> */}
-                    <HrmsTextInput name="phoneNumber" placeholder='Telefon Numarası' />
-                    <HrmsTextInput name="webAddress" placeholder='Web Site Adresi' />
-                    <Button color="green" type="submit">İlan Ver</Button>
-                </Form>
-            </Formik>
+                        <HrmsTextInput name="phoneNumber" placeholder='Telefon Numarası' />
+                        <HrmsTextInput name="webAddress" placeholder='Web Site Adresi' />
+                        <Button color="green" type="submit">İlan Ver</Button>
+                    </Form>
+                </Formik>
+            </div>
         </div>
     )
 }
