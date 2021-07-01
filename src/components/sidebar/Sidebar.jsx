@@ -43,38 +43,44 @@ export default function Sidebar() {
                             <span className="spanprofile"> Profile</span>
                             <span className="spanprofilevalue">80%</span>
                             <BorderLinearProgress variant="determinate" value={80} />
-
                         </li>
-
                         <br />
+                        <li className="sidebarListItem">
 
-                        <li className="sidebarListItem">
-                            <Dashboard className="sidebarIcon" />
-                            Dashboard
+                            <Link to={"/"}>
+                                <Dashboard className="sidebarIcon" />
+                                Dashboard
+                            </Link>
                         </li>
                         <li className="sidebarListItem">
-                            <Edit className="sidebarIcon" />
-                            Profili Düzenle
+                            <Link to={"/update/employer"}>
+                                <Edit className="sidebarIcon" />
+                                Profili Düzenle
+                            </Link>
                         </li>
                         <li className="sidebarListItem">
-                            <Business className="sidebarIcon" />
-                            Şirket Sayfası
+                            <Link to={"/profile/employer"}>
+                                <Business className="sidebarIcon" />
+                                Şirket Sayfası
+                            </Link>
+
                         </li>
-                        <li className="sidebarListItem">
+                        {/* <li className="sidebarListItem">
                             <Work className="sidebarIcon" />
                             İşleri Yönet
                         </li>
                         <li className="sidebarListItem">
                             <Apps className="sidebarIcon" />
                             Uygulama
+                        </li> */}
+                        <li className="sidebarListItem">
+                            <Link to={"/myjobpostings"}>
+                                <List className="sidebarIcon" />
+                                İlanlarım
+                            </Link>
                         </li>
                         <li className="sidebarListItem">
-                            <List className="sidebarIcon" />
-                            İlanlarım
-                        </li>
-                        <li className="sidebarListItem">
-
-                            <Link to={"/myjobposting/"}>
+                            <Link to={"/jobposting/add"}>
                                 <PostAdd className="sidebarIcon" />
                                 Yeni İş İlanı Yayınla
                             </Link>

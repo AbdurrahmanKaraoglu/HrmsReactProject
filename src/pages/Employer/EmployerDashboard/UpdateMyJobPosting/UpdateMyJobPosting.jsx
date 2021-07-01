@@ -22,7 +22,6 @@ import HrmsFormTextAreaInput from '../../../../utilities/jobPostingFormControls/
 
 
 
-
 const useStyles = makeStyles((theme) => ({
     container: {
         display: 'flex',
@@ -52,12 +51,6 @@ export default function UpdateMyJobPosting() {
     });
 
 
-    const handleChange = (event) => {
-        setState({ ...state, [event.target.name]: event.target.checked });
-    };
-
-    const { parttime, freelance, office, fulltime } = state;
-
 
 
     const [cities, setCities] = useState([]);
@@ -69,7 +62,7 @@ export default function UpdateMyJobPosting() {
     const cityOption = cities.map((city, index) => ({
         value: city.id,
         label: city.cityName,
-        // key: index,
+        key: index,
         // text: city.cityName,
         // value: city.id,
 
@@ -86,17 +79,6 @@ export default function UpdateMyJobPosting() {
         ({ value: jobPosition.id, label: jobPosition.title })
     );
 
-    {/* 	private int id;
-	private int employerId;
-	private int jobPositionId;
-	private String jobDescription;
-	private int citieId;
-	private int minimumSalary;
-	private int maximumSalary;
-	private int numberOfOpenPositions;
-	private LocalDate releaseDate; // yayın tarihi
-	private LocalDate applicationDeadline; // son başvuru tarihi
-	private boolean active;*/}
     const initialValues = {
         jobPostingId: 1,
         employerId: 1,
@@ -113,14 +95,14 @@ export default function UpdateMyJobPosting() {
     const schema = Yup.object(
         {
             // jobPostingId: Yup.number().required("İlan girilmesi zorunlu"),
-            // employerId: Yup.number().required("İş veren girilmesi zorunlu"),
+            //employerId: Yup.number().required("İş veren girilmesi zorunlu"),
 
-            // jobPositionId: Yup.number().required("İş Pozisyonunu Seçmek Zorunlu"),
+            //jobPositionId: Yup.number().required("İş Pozisyonunu Seçmek Zorunlu"),
             jobDescription: Yup.string().required("İş Açıklaması Zorunlu"),
-            citieId: Yup.number().required("İlan Vereceğiniz Şehri Seçmek Zorunlu"),
+            //citieId: Yup.number().required("İlan Vereceğiniz Şehri Seçmek Zorunlu"),
             maximumSalary: Yup.string().required("Maximum Maaş Zorunlu"),
             minimumSalary: Yup.string().required("Minumum Maaş Zorunlu"),
-            // numberOfOpenPositions: Yup.number().required("Açık Pozisyon Sayısı Zorunlu"),
+            numberOfOpenPositions: Yup.number().required("Açık Pozisyon Sayısı Zorunlu"),
             applicationDeadline: Yup.string().required("Son Başvuru Tarihi Zorunlu")
         }
     )
@@ -148,7 +130,7 @@ export default function UpdateMyJobPosting() {
                 jobPostingService
                     .updateMyJobPosting(values)
                     .then((result) => toast.success(result.data.message));
-                alert("İş ilanı eklendi, personelin onayı ardından listelenecektir");
+                alert("İş İlanı Eklendi, Sistem Personeli Tarafından Onaylandıktan Sonra Yayınlanacaktır");
             },
         }
     );
@@ -223,8 +205,18 @@ export default function UpdateMyJobPosting() {
                                 </div>
                             </div>
                             <div className="maxminSalaryDiv">
-                                <div className="maxSalaryDiv">
+                                {/* <div className="maxSalaryDiv">
                                     <HrmsTextInput name="maximumSalary" placeholder='Maximum Maaş' />
+                                </div> */}
+                                <div className="form-group">
+                                    <label htmlFor="maximumSalary">Maximum Maaş</label>
+                                    <Field name="maximumSalary" className={(formik.touched.maximumSalary && formik.errors.maximumSalary) ? 'form-control is-invalid' : 'form-control'} type="text" />
+
+
+
+                                    <ErrorMessage name="maximumSalary" render={error =>
+                                        <Label pointing basic color="red" content={error}></Label>
+                                    }></ErrorMessage>
                                 </div>
                                 <div className="minSalaryDiv">
                                     <HrmsTextInput name="minimumSalary" placeholder='Minumum Maaş' />
@@ -249,29 +241,27 @@ export default function UpdateMyJobPosting() {
                             </div>
                             <div className="workingtypes">
                                 <FormField>
-                                    <FormControl component="fieldset" className={classes.formControl}>
-                                        <FormLabel component="legend">Çalışma Türleri</FormLabel>
-                                        <FormGroup>
-                                            <FormControlLabel
-                                                control={<Checkbox checked={parttime} onChange={handleChange} name="parttime" />}
-                                                label="Part Time (Yarı Zamanlı)"
-                                            />
-                                            <FormControlLabel
-                                                control={<Checkbox checked={freelance} onChange={handleChange} name="freelance" />}
-                                                label="Freelance (Serbest)"
-                                            />
-                                            <FormControlLabel
-                                                control={<Checkbox checked={office} onChange={handleChange} name="office" />}
-                                                label="Office (Evden)"
-                                            />
-                                            <FormControlLabel
-                                                control={<Checkbox checked={fulltime} onChange={handleChange} name="fulltime" />}
-                                                label="Full Time (Tam Zamanlı)"
-                                            />
-
-                                        </FormGroup>
-                                        <FormHelperText>Dikkatli Ol</FormHelperText>
-                                    </FormControl>
+                                    <label>Çalışma Türleri</label>
+                                    <div class="form-check">
+                                        <Field name="parttime"
+                                            className="form-check-input" type="checkbox" id="gridCheck1" />
+                                        <label className="form-check-label" htmlFor="gridCheck1">Part Time (Yarı Zamanlı)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <Field name="freelance"
+                                            className="form-check-input" type="checkbox" id="gridCheck2" />
+                                        <label className="form-check-label" htmlFor="gridCheck2">Freelance (Serbest)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <Field name="office"
+                                            className="form-check-input" type="checkbox" id="gridCheck3" />
+                                        <label className="form-check-label" htmlFor="gridCheck3">Office (Evden)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <Field name="fulltime"
+                                            className="form-check-input" type="checkbox" id="gridCheck4" />
+                                        <label className="form-check-label" htmlFor="gridCheck4">Full Time (Tam Zamanlı)</label>
+                                    </div>
                                 </FormField>
                             </div>
 
@@ -283,22 +273,8 @@ export default function UpdateMyJobPosting() {
                                     }></ErrorMessage>
                                 </FormField>
                             </div>
-                            {/* <HrmsFormTextAreaInput name='jobDescription' /> */}
-                            {/* <TextareaAutosize
-                            name="jobDescription"
-                                    rowsMax={10}
-                                    aria-label="maximum height"
-                                    placeholder="Maximum 4 rows"
-                                    defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua."
-                                /> */}
-                            {/* <FormField> */}
 
-                            {/* <TextArea placeholder='İş Açıklaması' /> */}
-                            {/* </FormField> */}
-                            {/* <HrmsTextInput name="applicationDeadline" placeholder='Son Başvuru Tarihi' /> */}
-
-                            <Button className="myJobPostingUpdateButton" color="green" type="submit">Güncelle</Button>
+                            <button className="myJobPostingUpdateButton" type="submit">Güncelle</button>
                         </Form>
                     </div>
                 </Formik>

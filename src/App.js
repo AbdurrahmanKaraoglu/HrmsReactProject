@@ -14,6 +14,8 @@ import {
 import EmployerUpdatePage from './pages/Employer/EmployerDashboard/EmployerUpdate/EmployerUpdatePage';
 import MyJobPostings from './pages/Employer/EmployerDashboard/MyJobPostings/MyJobPostings';
 import UpdateMyJobPosting from './pages/Employer/EmployerDashboard/UpdateMyJobPosting/UpdateMyJobPosting';
+import EmployerProfile from './pages/Employer/EmployerDashboard/EmployerProfilePage/EmployerProfile';
+import JobPostingFormAdd from './pages/Employer/JobPostingForm/JobPostingFormAdd/JobPostingFormAdd';
 function App() {
   return (
     <div>
@@ -30,8 +32,14 @@ function App() {
           <Route path="/update/myjobposting/:id">
             <UpdateMyJobPosting />
           </Route>
-          <Route path="/employerupdate">
+          <Route path="/update/employer">
             <EmployerUpdatePage />
+          </Route>
+          <Route path="/profile/employer">
+            <EmployerProfile />
+          </Route>
+          <Route path="/jobposting/add">
+            <JobPostingFormAdd />
           </Route>
         </Switch>
       </div>
