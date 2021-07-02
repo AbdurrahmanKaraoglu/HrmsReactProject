@@ -7,7 +7,6 @@ import { makeStyles } from '@material-ui/core/';
 import Select from 'react-select'
 import CitiesService from '../../../../services/citiesService'
 import JobPositionService from '../../../../services/jobPositionService';
-import HrmsTextInput from '../../../../utilities/jobPostingFormControls/HrmsTextInput';
 import JobPostingFormService from '../../../../services/jobPostingFormService';
 import './jobPostingFormAdd.css';
 

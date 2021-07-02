@@ -90,7 +90,7 @@ export default function MyJobPostings() {
                 return (
                     <>
 
-                        <Link to={"/myjobposting/" + params.row.id}>
+                        <Link to={"/detail/myjobpostings/" + params.row.id}>
                             <Visibility className="iconVisibility" />
                         </Link>
                         <Link to={"/update/myjobposting/" + params.row.id}>

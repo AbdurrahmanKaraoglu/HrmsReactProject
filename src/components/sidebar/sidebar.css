@@ -7,15 +7,7 @@
     border: 2px solid rgb(235, 234, 234);
 }
 
-.ımage{
-    width: 100px;
-    height: 100px;
-    border-radius: 10%;
-    cursor: pointer;
-    
-    /* background-color: rgb(255, 0, 170); */
 
-}
 .cardcontent{
     /* background-color: red; */
     text-align: center;
@@ -74,7 +66,7 @@ color: #555;
     padding: 8px;
     cursor: pointer;
     align-items: center;
-    border-radius: 0px;
+    border-radius: 15px;
 }
 
 .sidebarListItem.active,.sidebarListItem:hover{

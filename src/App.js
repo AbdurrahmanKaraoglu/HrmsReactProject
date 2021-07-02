@@ -16,6 +16,7 @@ import MyJobPostings from './pages/Employer/EmployerDashboard/MyJobPostings/MyJo
 import UpdateMyJobPosting from './pages/Employer/EmployerDashboard/UpdateMyJobPosting/UpdateMyJobPosting';
 import EmployerProfile from './pages/Employer/EmployerDashboard/EmployerProfilePage/EmployerProfile';
 import JobPostingFormAdd from './pages/Employer/JobPostingForm/JobPostingFormAdd/JobPostingFormAdd';
+import MyJobPostingDetail from './pages/Employer/EmployerDashboard/MyJobPostingDetail/MyJobPostingDetail';
 function App() {
   return (
     <div>
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path="/myjobpostings">
             <MyJobPostings />
+          </Route>
+          <Route path="/detail/myjobpostings/:id">
+            <MyJobPostingDetail />
           </Route>
           <Route path="/update/myjobposting/:id">
             <UpdateMyJobPosting />

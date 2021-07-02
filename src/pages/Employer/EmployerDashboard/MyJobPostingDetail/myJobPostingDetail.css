@@ -1,0 +1,27 @@
+.myJobPostingDetail{
+    flex: 4;
+}
+
+
+
+ 
+/* {
+
+
+    "id": 0,
+
+    "employerId",
+
+    "citieId",
+
+    "jobPositionId"
+    ,
+    "jobDescription": "string",
+    "maximumSalary": 0,
+    "minimumSalary": 0,
+    "numberOfOpenPositions": 0,
+    "applicationDeadline": "string",
+    "releaseDate": "string"
+
+    "active": true,
+  } */
