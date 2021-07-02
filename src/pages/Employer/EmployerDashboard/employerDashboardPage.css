@@ -1,9 +1,8 @@
 .dashboardpage{
-    flex: 1;
+ 
 }
 .dashboardpage2{
-    flex: 2;
-    display: flex;
+    flex: 4;
 }
 .dashboardpageWidgets{
     display: flex;

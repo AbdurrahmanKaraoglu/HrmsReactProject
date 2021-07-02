@@ -35,36 +35,33 @@ export default function Sidebar() {
                         <li className="sidebarListItem">
                             <span className="companyName">Company Name</span>
                         </li>
-                        <li className="sidebarListItem">
-                            <span className="companyUserName">@username</span>
-                        </li>
+                        {/* <hr />
                         <br />
                         <li className="profile">
                             <span className="spanprofile"> Profile</span>
                             <span className="spanprofilevalue">80%</span>
                             <BorderLinearProgress variant="determinate" value={80} />
-                        </li>
+                        </li> */}
                         <br />
-                        <li className="sidebarListItem">
-
-                            <Link to={"/"}>
+                        <hr />
+                        <Link to={"/"}>
+                            <li className="sidebarListItem">
                                 <Dashboard className="sidebarIcon" />
                                 Dashboard
-                            </Link>
-                        </li>
-                        <li className="sidebarListItem">
-                            <Link to={"/update/employer"}>
+                            </li>
+                        </Link>
+                        <Link to={"/update/employer"}>
+                            <li className="sidebarListItem">
                                 <Edit className="sidebarIcon" />
                                 Profili Düzenle
-                            </Link>
-                        </li>
-                        <li className="sidebarListItem">
-                            <Link to={"/profile/employer"}>
+                            </li>
+                        </Link>
+                        <Link to={"/profile/employer"}>
+                            <li className="sidebarListItem">
                                 <Business className="sidebarIcon" />
                                 Şirket Sayfası
-                            </Link>
-
-                        </li>
+                            </li>
+                        </Link>
                         {/* <li className="sidebarListItem">
                             <Work className="sidebarIcon" />
                             İşleri Yönet
@@ -73,17 +70,24 @@ export default function Sidebar() {
                             <Apps className="sidebarIcon" />
                             Uygulama
                         </li> */}
-                        <li className="sidebarListItem">
-                            <Link to={"/myjobpostings"}>
+                        <Link to={"/myjobpostings"}>
+                            <li className="sidebarListItem">
                                 <List className="sidebarIcon" />
                                 İlanlarım
-                            </Link>
-                        </li>
-                        <li className="sidebarListItem">
-                            <Link to={"/jobposting/add"}>
+                            </li>
+                        </Link>
+                        <Link to={"/jobposting/add"}>
+                            <li className="sidebarListItem">
                                 <PostAdd className="sidebarIcon" />
                                 Yeni İş İlanı Yayınla
-                            </Link>
+                            </li>
+                        </Link>
+                       
+                        <br />
+                        <hr />
+                        <li className="sidebarListItem">
+                            <DeleteForever className="sidebarIcon" />
+                            Profili Sil
                         </li>
                         <hr />
                         <br />
@@ -91,14 +95,12 @@ export default function Sidebar() {
                             <PowerSettingsNew className="sidebarIcon" />
                             Çıkış Yap
                         </li>
-                        <li className="sidebarListItem">
-                            <DeleteForever className="sidebarIcon" />
-                            Profili Sil
-                        </li>
+                       
                     </ul>
                 </div>
-            </div>
+            </div >
 
-        </div>
+
+        </div >
     )
 }

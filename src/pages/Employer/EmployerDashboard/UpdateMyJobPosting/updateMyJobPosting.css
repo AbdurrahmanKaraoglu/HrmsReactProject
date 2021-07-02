@@ -1,128 +1,184 @@
-.updateMyJobPostings{
+.jobPostingFormUpdate{
     flex: 4;
-    padding: 20px;
-    border: 2px solid rgb(235, 234, 234);
-}
-.myJobPostingTitleContainer{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    border: 2px solid rgb(235, 234, 234);
-}
-.myJobPostingUpdateButton{
-    width: 80px;
-    border: none;
-    padding: 5px;
-    background-color: rgb(110, 172, 18);
-    border-radius: 5px;
-    cursor: pointer;
-    color: white;
-    font-size: 16px;
-    margin-left: 220px;
-    margin-top: 15px;
-    height: 50px;
-    width: 100px;
-    
-   
-}
-.myJobPostingUpdateButton:hover{
-   
-    background-color: rgb(53, 54, 50);
   
 }
-.myJobPostingContainer{
+.updateJobPostingTitle{
+    margin-left: 320px;
+}
+.updateJobPostingForm{
     display: flex;
-    justify-content: space-around;
-    border: 2px solid rgb(235, 234, 234);
+    flex-wrap: wrap;
 }
-.formContainer{
-    padding: 20px;
-    border: 2px solid rgb(235, 234, 234);
+.updateJobPostingItem{
+    width: 400px;
     display: flex;
-    /* background-color: red; */
-}
-
-.selectdiv{
-    border: 2px solid rgb(235, 234, 234);
-    -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-    box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-     display: flex;
-     flex-direction: row;
-     
-}
-.citySelect{
-   /* display: flex; */
-   flex: 2;
-   padding: 20px;
-   border: 2px solid rgb(235, 234, 234);
-   -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-   box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75);
-   flex-direction: row; 
-}
-.jobPositionSelect{
-   /* padding: 20px; */
-   flex: 2;
-   padding: 20px;
-   border: 2px solid rgb(235, 234, 234);
-   -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-   box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-
-   flex-direction: row;
-
-}
-.maxSalaryDiv{
-    padding: 20px;
+    flex-direction: column;
+    margin-top: 10px;
     margin-left: 20px;
-    border: 2px solid rgb(235, 234, 234);
-    -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-    box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+}
+.updateJobPostingItem > label{
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(134, 130, 130);
+}
+.updateJobPostingItem > input{
+  height: 40px;
+  padding: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
 
-}
-.minSalaryDiv{
-    padding: 20px;
-    margin-left: 85px;
-    border: 2px solid rgb(235, 234, 234);
-    -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-    box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-}
-.maxminSalaryDiv{
-    border: 2px solid rgb(235, 234, 234);
-   -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-   box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
+
+.updateJobPostingItem > Select{
+    height: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+.form-control{
+    height: 10px;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+.updateJobPostingWorkingTypes{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     
 }
+.updateJobPostingWorkingTypes > input{
+   margin-top: 15px;
+    
+}
+.updateJobPostingWorkingTypes > label{
+    margin: 10px;
+    font-size: 18px;
+    color: #555;
+    size: 20px;
+ }
 
-.workingtypes{
-    border: 2px solid rgb(235, 234, 234);
-    -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-    box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-    display: flex;
-    margin-left: 85px;
-}
-.applicationDeadline{
-    border: 2px solid rgb(235, 234, 234);
-    -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-    box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-     display: flex;
-}
-.numberOfOpenPositions{
-    border: 2px solid rgb(235, 234, 234);
-    -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-    box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-     display: flex;
-     margin-left: 85px;
-}
-.jobDescription{
-    border: 2px solid rgb(235, 234, 234);
-    -webkit-box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-    box-shadow: 0px 0px 15px -10px rgba(0,0,0,0.75); 
-     display: flex;
-}
-.deneme{
-    border: 2px solid rgb(235, 234, 234);
-    display: flex;
-    margin-left: 85px;
+ /* The newJobPostingWorkingTypesContainer */
+.updateJobPostingWorkingTypesContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .updateJobPostingWorkingTypesContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .updateJobPostingWorkingTypesCheckmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .updateJobPostingWorkingTypesContainer:hover input ~ .updateJobPostingWorkingTypesCheckmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .updateJobPostingWorkingTypesContainer input:checked ~ .updateJobPostingWorkingTypesCheckmark {
+    background-color: #2196F3;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .updateJobPostingWorkingTypesCheckmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .updateJobPostingWorkingTypesContainer input:checked ~ .updateJobPostingWorkingTypesCheckmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .updateJobPostingWorkingTypesContainer .updateJobPostingWorkingTypesCheckmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+.updateJobPostingButton{
+    margin-top: 20px;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+   
+
+    
 
 }
+.newJobPostingButton:hover{
+    background-color: #3e8e41
+
+}
+.newJobPostingButton:active{
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+
+}
+.newJobPostingButtonItem{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 320px;
+}
+
+ 
+/* {
+
+
+    "id": 0,
+
+    "employerId",
+
+    "citieId",
+    "jobPositionId",
+    "jobDescription": "string",
+    "maximumSalary": 0,
+    "minimumSalary": 0,
+    "numberOfOpenPositions": 0,
+    "applicationDeadline": "string",
+    "releaseDate": "string"
+
+    "active": true,
+  } */
