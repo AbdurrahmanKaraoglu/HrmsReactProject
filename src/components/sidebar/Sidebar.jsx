@@ -1,6 +1,6 @@
 import React from 'react'
 import "./sidebar.css"
-import { Dashboard, Edit, Business, Work, Apps, PostAdd, PowerSettingsNew, DeleteForever, List } from '@material-ui/icons';
+import { Dashboard, Edit, Business, Home, Apps, PostAdd, PowerSettingsNew, DeleteForever, List } from '@material-ui/icons';
 import LinearProgress from '@material-ui/core/LinearProgress';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from "react-router-dom";
@@ -27,14 +27,13 @@ export default function Sidebar() {
                 <div className="sidebarMenu">
                     <h3 className="sidebarTitle">Dashboard</h3>
                     <ul className="sidebarList">
-                        <li className="sidebarListItem">
-                            <img src="https://avatars.githubusercontent.com/u/74272647?s=400&u=5d48bfa58627f417e64727a5a8528e024bb85246&v=4" alt="" className="ımage" />
-                            <div className="companyUser">
-                            </div>
+                        <li className="sidebarListItem2">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/%C3%9Clker_logo.svg/1024px-%C3%9Clker_logo.svg.png" alt="" className="ımage" />
+                            <h4 className="sidebarListCompanyName">Ülker</h4>
+
                         </li>
-                        <li className="sidebarListItem">
-                            <span className="companyName">Company Name</span>
-                        </li>
+                       
+                      
                         {/* <hr />
                         <br />
                         <li className="profile">
@@ -44,7 +43,15 @@ export default function Sidebar() {
                         </li> */}
                         <br />
                         <hr />
+
                         <Link to={"/"}>
+                            <li className="sidebarListItem">
+                                <Home className="sidebarIcon" />
+                                Ana Sayfa
+                            </li>
+                        </Link>
+
+                        <Link to={"/dashboard/employer/1"}>
                             <li className="sidebarListItem">
                                 <Dashboard className="sidebarIcon" />
                                 Dashboard
@@ -82,20 +89,27 @@ export default function Sidebar() {
                                 Yeni İş İlanı Yayınla
                             </li>
                         </Link>
-                       
+
                         <br />
                         <hr />
-                        <li className="sidebarListItem">
-                            <DeleteForever className="sidebarIcon" />
-                            Profili Sil
-                        </li>
+                        <Link to={"/delete/employer"}>
+                            <li className="sidebarListItem sidebarListItemDelete">
+                                <DeleteForever className="sidebarIcon" />
+                                Profili Sil
+                            </li>
+                        </Link>
+
                         <hr />
                         <br />
-                        <li className="sidebarListItem">
-                            <PowerSettingsNew className="sidebarIcon" />
-                            Çıkış Yap
-                        </li>
-                       
+
+                        <Link to={"/"}>
+                            <li className="sidebarListItem">
+                                <PowerSettingsNew className="sidebarIcon" />
+                                Çıkış Yap
+                            </li>
+                        </Link>
+
+
                     </ul>
                 </div>
             </div >

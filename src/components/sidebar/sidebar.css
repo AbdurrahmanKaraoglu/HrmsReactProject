@@ -17,9 +17,12 @@
 .ımage{
     width: 40px;
     border-radius: 10%;
-    object-fit: cover;
+    object-fit: scale-down;
     width: 120px;
     height: 120px;
+}
+.sidebarListItem2{
+    text-align: center;
 }
 .companyUser{
 
@@ -77,4 +80,17 @@ color: #555;
     font-size: 20px !important;
 }
 
+.sidebarListItemDelete{
+    margin-right: 5px;
+    font-size: 15px !important;
+}
+.sidebarListItemDelete:hover{
+    background-color: #e53935;
+}
+
+.sidebarListCompanyName{
+   
+    /* background-color: #1976d2; */
+    text-align: center;
+}
 

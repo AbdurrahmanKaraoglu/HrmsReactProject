@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import { Icon, Table, Menu } from 'semantic-ui-react';
-import JobPostingFormService from '../../../services/jobPostingFormService';
+import JobPostingFormService from '../../../../services/jobPostingFormService';
 
 export default function JobPostingFormEmployerCompanyNameList() {
     let {name} = useParams();

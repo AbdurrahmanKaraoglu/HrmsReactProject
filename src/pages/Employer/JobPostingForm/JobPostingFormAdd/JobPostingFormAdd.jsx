@@ -237,32 +237,62 @@ export default function JobPostingFormAdd() {
                     </div>
 
                     <div className="newJobPostingItem">
-                        <label>Çalışma Türleri</label>
+                        <label>Çalışma Şekli</label>
                         <div className="newJobPostingWorkingTypes">
 
                             <label class="newJobPostingWorkingTypesContainer">Part Time (Yarı Zamanlı)
                                 <input type="checkbox" name="parttime" id="parttime" value="parttime" />
                                 <span class="newJobPostingWorkingTypesCheckmark"></span>
                             </label>
-                            <label class="newJobPostingWorkingTypesContainer">Freelance (Serbest)
-                                <input type="checkbox" name="freelance" id="freelance" value="freelance" />
-                                <span class="newJobPostingWorkingTypesCheckmark"></span>
-                            </label>
-                            <label class="newJobPostingWorkingTypesContainer">Office (Evden)
-                                <input type="checkbox" name="office" id="office" value="office" />
-                                <span class="newJobPostingWorkingTypesCheckmark"></span>
-                            </label>
+
                             <label class="newJobPostingWorkingTypesContainer">Full Time (Tam Zamanlı)
                                 <input type="checkbox" name="fulltime" id="fulltime" value="fulltime" />
                                 <span class="newJobPostingWorkingTypesCheckmark"></span>
                             </label>
 
+                            <label class="newJobPostingWorkingTypesContainer">Freelance (Serbest)
+                                <input type="checkbox" name="freelance" id="freelance" value="freelance" />
+                                <span class="newJobPostingWorkingTypesCheckmark"></span>
+                            </label>
+
+                            <label class="newJobPostingWorkingTypesContainer">Office (Evden)
+                                <input type="checkbox" name="office" id="office" value="office" />
+                                <span class="newJobPostingWorkingTypesCheckmark"></span>
+                            </label>
+
+                            <label class="newJobPostingWorkingTypesContainer">Stajyer
+                                <input type="checkbox" name="intern" id="intern" value="intern" />
+                                <span class="newJobPostingWorkingTypesCheckmark"></span>
+                            </label>
+
+                            <label class="newJobPostingWorkingTypesContainer">Dönemsel(Proje Bazlı)
+                                <input type="checkbox" name="seasonal" id="seasonal" value="seasonal" />
+                                <span class="newJobPostingWorkingTypesCheckmark"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div className="newJobPostingItem">
+                        <label>Çalışma Türleri</label>
+                        <div className="newJobPostingWorkingTypes">
+
+                            <label class="newJobPostingWorkingTypesContainer">Uzaktan
+                                <input type="checkbox" name="afar" id="afar" value="afar" />
+                                <span class="newJobPostingWorkingTypesCheckmark"></span>
+                            </label>
+
+                            <label class="newJobPostingWorkingTypesContainer">İş Yerinde
+                                <input type="checkbox" name="workplace" id="workplace" value="workplace" />
+                                <span class="newJobPostingWorkingTypesCheckmark"></span>
+                            </label>
+                        </div>
+                    </div>
 
 
-                            {/* <input type="checkbox" name="parttime" id="parttime" value="parttime" />
+                    {/* <input type="checkbox" name="parttime" id="parttime" value="parttime" />
                                 <label for="parttime"></label> */}
 
-                            {/* <input type="checkbox" name="freelance" id="freelance" value="freelance" />
+                    {/* <input type="checkbox" name="freelance" id="freelance" value="freelance" />
                                 <label for="freelance">Freelance (Serbest)</label>
 
                                 <input type="checkbox" name="office" id="office" value="office" />
@@ -270,9 +300,9 @@ export default function JobPostingFormAdd() {
 
                                 <input type="checkbox" name="fulltime" id="fulltime" value="fulltime" />
                                 <label for="fulltime">Full Time (Tam Zamanlı)</label> */}
-                        </div>
 
-                    </div>
+
+
 
                 </form>
 

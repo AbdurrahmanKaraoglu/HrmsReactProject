@@ -47,6 +47,8 @@
     color: rgb(199, 199, 187);
 }
 
+
+
 .iconVisibility:hover{
     color: rgb(31, 54, 255);
 }
@@ -55,4 +57,26 @@
 }
 .iconDelete:hover{
     color: rgb(255, 0, 0);
+}
+
+.iconVisibilityOffButton{
+    display: inline-block;
+    padding: 1px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 12px;
+    /* box-shadow: 0 9px #999; */
+}
+.iconVisibilityOffButton:hover {background-color: #3e8e41}
+
+.iconVisibilityOffButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }

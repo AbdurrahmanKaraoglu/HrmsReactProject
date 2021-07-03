@@ -79,7 +79,7 @@ export const myJobPostingsRows = [
         numberOfOpenPositions: 7,
         minimumSalary: '5000',
         maximumSalary: '10000',
-        releaseDate: '2021-01-01',
+        releaseDate: '2021-11-01',
         applicationDeadline: '2022-01-01',
         status: 'true'
     },
@@ -126,7 +126,7 @@ export const myJobPostingsRows = [
         numberOfOpenPositions: 11,
         minimumSalary: '5000',
         maximumSalary: '10000',
-        releaseDate: '2021-01-01',
+        releaseDate: '2021-11-21',
         applicationDeadline: '2022-01-01',
         status: 'true'
     },
@@ -210,7 +210,7 @@ export const myJobPostingsRows = [
         numberOfOpenPositions: 18,
         minimumSalary: '5000',
         maximumSalary: '10000',
-        releaseDate: '2021-01-01',
+        releaseDate: '2021-03-01',
         applicationDeadline: '2022-01-01',
         status: 'true'
     },
@@ -222,7 +222,7 @@ export const myJobPostingsRows = [
         numberOfOpenPositions: 19,
         minimumSalary: '5000',
         maximumSalary: '10000',
-        releaseDate: '2021-01-01',
+        releaseDate: '2021-04-01',
         applicationDeadline: '2022-01-01',
         status: 'true'
     },
@@ -234,8 +234,8 @@ export const myJobPostingsRows = [
         numberOfOpenPositions: 20,
         minimumSalary: '5000',
         maximumSalary: '10000',
-        releaseDate: '2021-01-01',
-        applicationDeadline: '2022-01-01',
+        releaseDate: '2021-02-01',
+        applicationDeadline: '2023-01-01',
         status: 'true'
     },
 ];

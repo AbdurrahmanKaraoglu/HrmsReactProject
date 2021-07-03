@@ -162,6 +162,20 @@
     margin-top: 20px;
     margin-left: 320px;
 }
+.jobPostingActive{
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.jobPostingActive>label{
+  margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(134, 130, 130);
+
+}
 
  
 /* {

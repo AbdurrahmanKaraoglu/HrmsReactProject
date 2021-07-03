@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Icon, Table, Menu } from 'semantic-ui-react'
-import JobPostingFormService from '../../services/jobPostingFormService';
+import JobPostingFormService from '../../../services/jobPostingFormService';
 
 export default function JobPostingFormList() {
     const [jobPostings, setJobPostings] = useState([]);

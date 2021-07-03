@@ -5,7 +5,7 @@ import {
     CalendarToday,
     AttachMoney,
     Description,
-    Work, Event
+    Work, Event, Info, WorkOutline
 } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import './myJobPostingDetail.css'
@@ -38,6 +38,13 @@ export default function MyJobPostingDetail() {
                         </div>
 
                         <div className="userShowInfo">
+                            <WorkOutline className="userShowIcon" />
+                            <span
+                                className="userShowInfoTitle">Çalışma Türleri: </span>
+                        </div>
+
+
+                        <div className="userShowInfo">
                             <Description className="userShowIcon" />
                             <span
                                 className="userShowInfoTitle">Açıklama Metni</span>
@@ -66,6 +73,11 @@ export default function MyJobPostingDetail() {
                         <div className="userShowInfo">
                             <Event className="userShowIcon" />
                             <span className="userShowInfoTitle">Son Başvuru Tarihi</span>
+                        </div>
+
+                        <div className="userShowInfo">
+                            <Info className="userShowIcon" />
+                            <span className="userShowInfoTitle">Durum Bilgisi: </span>
                         </div>
 
 

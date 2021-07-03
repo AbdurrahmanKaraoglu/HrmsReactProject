@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './myJobPostings.css'
 import { DataGrid } from '@material-ui/data-grid';
-import { Visibility, Edit, Delete } from '@material-ui/icons';
+import { Visibility, Edit, Delete, VisibilityOff } from '@material-ui/icons';
 import { myJobPostingsRows } from './dummyData'
 import { Link } from "react-router-dom";
 
@@ -80,16 +80,30 @@ export default function MyJobPostings() {
         {
             field: 'status',
             headerName: 'Durum',
-            width: 120
+            width: 120,
+            renderCell:(params) =>{
+                return(
+                    <>
+                       <Link to={"/detail/myjobpostings/" + params.row.id}>
+                            <button className="iconVisibilityOffButton">
+                                AKTİF
+                            </button>
+                        </Link>
+
+                    </>
+                )
+            }
         },
+
         {
             field: 'action',
             headerName: 'Action',
-            width: 120,
+            width: 180,
             renderCell: (params) => {
                 return (
                     <>
 
+                     
                         <Link to={"/detail/myjobpostings/" + params.row.id}>
                             <Visibility className="iconVisibility" />
                         </Link>
@@ -97,6 +111,10 @@ export default function MyJobPostings() {
                             <Edit className="iconEdit" />
                         </Link>
                         <Delete className="iconDelete" onClick={() => handleDelete(params.row.id)} />
+
+
+
+
                     </>
 
                     // <div className="jobPostingsList">
