@@ -6,6 +6,9 @@ import Navi from './layouts/Navi/Navi';
 import Footer from './layouts/FooterLayouts/Footer.jsx'
 import Navbar from './components/Navbar/Navbar';
 import HomePage from './pages/HomePage/HomePage';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './components/pages/HomePage/Home';
+import Services from './components/pages/Services/Services';
 
 
 
@@ -14,15 +17,23 @@ import HomePage from './pages/HomePage/HomePage';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      {/* <Topbar /> */}
-      <Container className="main">
-        <HomePage/>
-        {/* <Sidebar /> */}
-        {/* <Dashboard /> */}
-      </Container>
-      <br />
-      <Footer />
+      <Router>
+        <Navbar />
+        <Switch>
+          <Container className="main">
+
+          <Route path='/' exact component={Home}/>
+          <Route path='/services' component={Services}/>
+            {/* <Topbar /> */}
+
+            {/* <Route path='/' exact component={HomePage} /> */}
+            {/* <Sidebar /> */}
+            {/* <Dashboard /> */}
+          </Container>
+        </Switch>
+        {/* <br /> */}
+        <Footer />
+      </Router>
     </div>
   );
 }
