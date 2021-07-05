@@ -54,9 +54,7 @@ export default function EmployerUpdatePage() {
       },
     }
   );
-  const handleChangeSemantic = (value, fieldName) => {
-    formik.setFieldValue(fieldName, value);
-  };
+
   return (
     <div className="updatePage">
       <h1>İşveren Bilgilerini Güncelle</h1>

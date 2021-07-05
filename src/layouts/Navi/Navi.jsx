@@ -22,7 +22,7 @@ export default function Navi() {
 
     return (
         <div>
-            <Menu fixed="top">
+            <Menu>
                 <Container>
                     <Menu.Item name='İnsan Kaynakları Yönetim Sistemi' as={NavLink} to="/" />
                     <Menu.Menu position='right'>

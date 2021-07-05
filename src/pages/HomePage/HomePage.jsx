@@ -4,37 +4,41 @@ import JobPostingFormService from '../../services/jobPostingFormService';
 import './HomePage.css'
 import TablePagination from '@material-ui/core/TablePagination';
 import { useHistory } from "react-router";
+import HomepageBanner from "./HomepageBanner/HomepageBanner"
 
 
 
 export default function HomePage() {
 
-    const history = useHistory()
+    // const history = useHistory()
     
-    function handleDropdownClick () {
-        history.push('/homepagedetail')
-    }
+    // function handleDropdownClick () {
+    //     history.push('/homepagedetail')
+    // }
 
-    const [jobPostings, setJobPostings] = useState([]);
-    useEffect(() => {
-        let jobPostingFormService = new JobPostingFormService();
-        jobPostingFormService.getJobPostingForm().then(result => setJobPostings(result.data.data))
-    }, []);
+    // const [jobPostings, setJobPostings] = useState([]);
+    // useEffect(() => {
+    //     let jobPostingFormService = new JobPostingFormService();
+    //     jobPostingFormService.getJobPostingForm().then(result => setJobPostings(result.data.data))
+    // }, []);
 
-    const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
+    // const [page, setPage] = React.useState(0);
+    // const [rowsPerPage, setRowsPerPage] = React.useState(10);
 
-    const handleChangePage = (event, newPage) => {
-        setPage(newPage);
-    };
-    const handleChangeRowsPerPage = (event) => {
-        setRowsPerPage(parseInt(event.target.value, 10));
-        setPage(0);
-    };
+    // const handleChangePage = (event, newPage) => {
+    //     setPage(newPage);
+    // };
+    // const handleChangeRowsPerPage = (event) => {
+    //     setRowsPerPage(parseInt(event.target.value, 10));
+    //     setPage(0);
+    // };
 
     return (
         <div className="myDiv">
-            {
+
+
+           <HomepageBanner/>
+            {/* {
                 jobPostings.map((jobPosting, i) => (
                     <Item.Group key={i} divided>
                         <Item key={i} >
@@ -78,7 +82,7 @@ export default function HomePage() {
                 rowsPerPageOptions={[10, 50, { value: -1, label: 'All' }]}
             >
                 
-            </TablePagination>
+            </TablePagination> */}
         </div>
     )
 }

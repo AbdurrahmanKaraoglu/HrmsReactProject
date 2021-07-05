@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { Formik, ErrorMessage, Form, useFormik, Field } from 'formik';
+import { Formik, ErrorMessage, useFormik, Field } from 'formik';
 import * as Yup from 'yup';
-import { FormField, Label } from 'semantic-ui-react';
+import { Label } from 'semantic-ui-react';
 import CitiesService from '../../../../services/citiesService'
 import JobPositionService from '../../../../services/jobPositionService';
-import HrmsTextInput from '../../../../utilities/jobPostingFormControls/HrmsTextInput';
 import { toast } from "react-toastify";
 import JobPostingFormService from '../../../../services/jobPostingFormService';
 import './updateMyJobPosting.css';
@@ -34,12 +33,6 @@ const useStyles = makeStyles((theme) => ({
 export default function UpdateMyJobPosting() {
 
     const classes = useStyles();
-    const [state, setState] = React.useState({
-        parttime: false,
-        freelance: false,
-        office: false,
-        fulltime: false,
-    });
 
 
 

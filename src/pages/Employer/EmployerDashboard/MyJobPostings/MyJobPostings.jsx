@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './myJobPostings.css'
 import { DataGrid } from '@material-ui/data-grid';
-import { Visibility, Edit, Delete, VisibilityOff } from '@material-ui/icons';
+import { Visibility, Edit, Delete } from '@material-ui/icons';
 import { myJobPostingsRows } from './dummyData'
 import { Link } from "react-router-dom";
 
