@@ -9,7 +9,11 @@ import HomePage from './pages/HomePage/HomePage';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Home from './components/pages/HomePage/Home';
 import Services from './components/pages/Services/Services';
-
+import FilterSubMenu from './layouts/FilterSubMenuLayouts/FilterSubMenu';
+import JobAds from './pages/JobAds';
+import SignUp from './components/pages/SignUp/SignUp';
+import SignUpJobSeeker from './components/pages/SignUp/SignUpJobSeeker/SignUpJobSeeker';
+import SignUpEmployer from './components/pages/SignUp/SignUpEmployer/SignUpEmployer';
 
 
 
@@ -19,18 +23,26 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-        <Switch>
+       
           <Container className="main">
 
           <Route path='/' exact component={Home}/>
           <Route path='/services' component={Services}/>
+          <Route path='/jobsearch' component={FilterSubMenu}/>
+          <Route path='/sign-up' component={SignUp}/>
+          <Route path='/sign-up-jobseeker' component={SignUpJobSeeker}/>
+          <Route path='/sign-up-employer' component={SignUpEmployer}/>
+  
+
+
+          
             {/* <Topbar /> */}
 
             {/* <Route path='/' exact component={HomePage} /> */}
             {/* <Sidebar /> */}
             {/* <Dashboard /> */}
           </Container>
-        </Switch>
+       
         {/* <br /> */}
         <Footer />
       </Router>

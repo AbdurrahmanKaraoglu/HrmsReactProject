@@ -1,0 +1,13 @@
+.filtermenulist{
+    flex: 4;
+}
+.tablelist{
+    padding: 100px 0 160px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.myDiv { 
+    text-align: initial;
+    background-color: rgb(255, 255, 255);
+  }

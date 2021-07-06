@@ -1,165 +1,169 @@
-import React, { useState, useEffect } from 'react'
-import { Checkbox, Input, Menu, Button, Dropdown } from 'semantic-ui-react'
-import Accordion from '@material-ui/core/Accordion';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import React, { useEffect, useState } from 'react'
+import CityService from '../../services/citiesService'
+import JobPositionService from '../../services/jobPositionService';
+import WorkPlaceService from '../../services/workPlaceService';
+import WorkTimeService from '../../services/workTimeService';
+import { Label, Dropdown, Segment, Checkbox, Button } from 'semantic-ui-react'
 import './FilterSubMenu.css'
-import CitiesService from '../../services/citiesService';
 
-const cityOptions = [];
+import { FaFire } from 'react-icons/fa'
+import { BsXDiamondFill } from 'react-icons/bs'
+import { GiCrystalize } from 'react-icons/gi'
+import { Link } from 'react-router-dom'
+import FilterMenuList from './FilterMenuList';
+import JobAdFilter from './FilterSubMenu';
+import JobPostingFormService from '../../services/jobPostingFormService';
 
-export default function FilterSubMenu() {
+
+export default function FilterSubMenu({ clickEvent }) {
 
     const [cities, setCities] = useState([]);
-    useEffect(() => {
-        let citiesService = new CitiesService();
-        citiesService.getAll().then(result => setCities(result.data.data))
-    }, []);
+    const [jobPositions, setJobPositions] = useState([]);
+    const [workPlaces, setWorkPlaces] = useState([]);
+    const [workTimes, setWorkTimes] = useState([]);
 
-    cities.map((city) =>
-        cityOptions.push({ key: city.id, text: city.cityName, value: city.id })
-    );
+
+    useEffect(() => {
+        let cityService = new CityService()
+        cityService.getAll().then(result => setCities(result.data.data))
+
+        let jobPositionService = new JobPositionService()
+        jobPositionService.getJobposition().then(result => setJobPositions(result.data.data))
+
+        let workPlaceService = new WorkPlaceService()
+        workPlaceService.getWorkPlaces().then(result => setWorkPlaces(result.data.data))
+
+        let workTimeService = new WorkTimeService();
+        workTimeService.getWorkTimes().then(result => setWorkTimes(result.data.data))
+    }, [])
+
+    const [cityIndex, setCityIndex] = useState([])
+    const handleChangeCity = (e, { value }) => {
+        setCityIndex(value)
+    }
+
+    const [jobPositionIndex] = useState([])
+    const handleChangeJobPosition = (e, { value, checked }) => {
+        if (checked) {
+            jobPositionIndex.push(value)
+        } else {
+            let index = jobPositionIndex.indexOf(value)
+            if (index > -1) {
+                jobPositionIndex.splice(index, 1)
+            }
+        }
+    }
+
+    const [workPlaceIndex] = useState([])
+    const handleChangeWorkPlace = (e, { value, checked }) => {
+        if (checked) {
+            workPlaceIndex.push(value)
+        } else {
+            let index = workPlaceIndex.indexOf(value)
+            if (index > -1) {
+                workPlaceIndex.splice(index, 1)
+            }
+        }
+    }
+
+    const [workTimeIndex] = useState([])
+    const handleChangeWorkTime = (e, { value, checked }) => {
+        if (checked) {
+            workTimeIndex.push(value)
+        } else {
+            let index = workTimeIndex.indexOf(value)
+            if (index > -1) {
+                workTimeIndex.splice(index, 1)
+            }
+        }
+    }
 
     return (
 
-        <div className="myDiv">
+        <div>
 
-            <Menu vertical>
-                <Menu.Item>
-                    <Input placeholder='Ara...' />
-                </Menu.Item>
+            <div className='filter__section'>
+                <div className='filter__wrapper'>
+                    <div className='filter__container'>
+                        <div className='filter__container-card'>
+                            <div className='filter__container-cardInfo'>
+                                <Segment color="white" raised>
+                                    <Label size="large">Şehir</Label>
+                                    <Dropdown
+                                        placeholder="Şehir seçiniz"
+                                        selection
+                                        search
+                                        multiple
+                                        clearable
+                                        options={cities.map((city, index) => {
+                                            return { text: city.cityName, key: city.index, value: city.id }
+                                        })}
+                                        onChange={handleChangeCity}
+                                        value={cityIndex}
+                                    />
+                                </Segment>
+                                <Segment color="white" raised>
+                                    <Label attached="top" size="large">İş Pozisyonu</Label>
+                                    {
+                                        jobPositions.map(jobPosition => (
+                                            <Checkbox
+                                                key={jobPosition.id}
+                                                label={jobPosition.title}
+                                                onChange={handleChangeJobPosition}
+                                                value={jobPosition.id}
+                                            />
+                                        ))
+                                    }
+                                </Segment>
+                                <Segment color="white" raised>
+                                    <Label attached="top" size="large">Çalışma Yeri</Label>
+                                    {
+                                        workPlaces.map(workPlace => (
+                                            <Checkbox
+                                                key={workPlace.id}
+                                                label={workPlace.name}
+                                                onChange={handleChangeWorkPlace}
+                                                value={workPlace.id}
+                                            />
+                                        ))
+                                    }
+                                </Segment>
+                                <Segment color="white" raised>
+                                    <Label attached="top" size="large">Çalışma Süresi</Label>
+                                    {
+                                        workTimes.map(workTime => (
+                                            <Checkbox
+                                                key={workTime.id}
+                                                label={workTime.name}
+                                                onChange={handleChangeWorkTime}
+                                                value={workTime.id}
+                                            />
+                                        ))
+                                    }
+                                </Segment>
+                                <button
+                                    className='button'
+                                    onClick={() => clickEvent({ cityId: cityIndex, jobPositionId: jobPositionIndex, workPlaceId: workPlaceIndex, workTimeId: workTimeIndex })}
+                                >
+                                    Filtrele
+                                </button>
+                            </div>
+                            
+                        </div>
 
-                <Accordion className='accordion'>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                        <h3> Çalışma Şekli </h3>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        <Menu.Menu>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Sürekli / Tam zamanlı' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Yarı zamanlı / Part Time' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Serbest Zamanlı' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Dönemsel / Proje bazlı' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Stajyer' }} />
-                            </Menu.Item>
-                        </Menu.Menu>
-                    </AccordionDetails>
-                </Accordion>
 
-                <Accordion className='accordion'>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                        <h3> Pozisyon Seviyesi </h3>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        <Menu.Menu>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Üst düzey yönetici' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Orta düzey yönetici' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Yönetici adayı' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Uzman' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Yeni Başlayan' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Serbest / Freelancer' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'İşçi ve Mavi Yaka' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Uzman Yardımcısı' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Eleman' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Hizmet Personeli' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Stajyer' }} />
-                            </Menu.Item>
-                        </Menu.Menu>
-                    </AccordionDetails>
-                </Accordion>
-
+                        <FilterMenuList />
 
 
 
-                <Accordion className='accordion'>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                        <h3> Eğitim Seviyesi </h3>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        <Menu.Menu>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Doktora - Mezun' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Doktora - Öğrenci' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Yüksek Lisans - Mezun' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Yüksek Lisans - Öğrenci' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Üniversite - Mezun' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Üniversite - Öğrenci' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Meslek Yüksekokulu - Mezun' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Meslek Yüksekokulu - Öğrenci' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Üniversite - Mezun' }} />
-                            </Menu.Item>
-                            <Menu.Item>
-                                <Checkbox label={{ children: 'Üniversite - Öğrenci' }} />
-                            </Menu.Item>
-                        </Menu.Menu>
-                    </AccordionDetails>
-                </Accordion>
 
-                <Accordion className='accordion'>
-                    <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                        <h3> Şehir Seçin </h3>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                        <Dropdown
-                            placeholder='Şehir Seçin'
-                            fluid
-                            multiple
-                            search
-                            selection
-                            options={cityOptions}
-                        />
-                    </AccordionDetails>
-                </Accordion>
-                <Menu.Item>
-                    <Button fluid primary>Uygula</Button>
-                </Menu.Item>
-            </Menu>
+
+                      
+                    </div>
+                    
+                </div>
+            </div>
+
         </div>
     )
 }

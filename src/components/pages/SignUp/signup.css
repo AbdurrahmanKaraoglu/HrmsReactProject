@@ -1,54 +1,58 @@
-.filter__section{
+.signup__section{
     padding: 100px 0 160px;
-    flex: 1;
-    height: calc(100vh - 50px);
-    background-color: rgb(251, 251, 251);
-    top: 50px;
-    position: sticky;
-    border: 2px solid rgb(235, 234, 234);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fafafa;
 }
 
-.filter__container-card{
+.signup__container-card{
     background: linear-gradient(45deg , #88ec6a 0%, #276afb 100%);
     box-shadow: 0 6px 20px rgba(65, 125, 255, 0.2);
     width: 280px;
-    height: 800px;
+    height: 500px;
     text-decoration: none;
     border-radius: 4px;
 }
 
-/* .filter__container-card:nth-child(2){
-    transform: scale(1.05);
-    background: #d14949;
-    margin: 0 24px;
-} */
+.signup__container-card:nth-child(2){
 
-/* .filter__container-card:hover{
+    background: linear-gradient(45deg , #88ec6a 0%, #276afb 100%);
+    box-shadow: 0 6px 20px rgba(65, 125, 255, 0.2);
+    width: 280px;
+    height: 500px;
+    text-decoration: none;
+    border-radius: 4px;
+    margin: 0 24px;
+}
+
+.signup__container-card:hover{
     transform: scale(1.06);
     transition: all 0.3s ease-out;
     color: #1c2237;
-} */
+}
 
-.filter__container {
+.signup__container {
     display: flex;
     justify-content: center;
     align-content: center;
 }
 
-.filter__wrapper{
+.signup__wrapper{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: flex-start;
     margin: 0 auto;
     
 }
 
-.filter__heading{
-    color: #1c2237;
-    margin-bottom: 24px;
+.signup__heading{
+    color: #4468e7;
+    margin-bottom: 34px;
+    margin-left: 230px;
 }
 
-.filter__container-cardInfo{
+.signup__container-cardInfo{
     display: flex;
     flex-direction: column;
     height: 500px;
@@ -57,23 +61,23 @@
     color: #fff;
 }
 
-.filter__container-cardInfo h3{
+.signup__container-cardInfo h3{
     margin-bottom: 5px;
     font-size: 24px;
     color: #fff;
 }
 
-.filter__container-cardInfo h4{
+.signup__container-cardInfo h4{
     font-size: 40px;
 }
 
-.filter__container-cardInfo p{
+.signup__container-cardInfo p{
     font-size: 14px;
     margin-bottom: 24px;
     color: #fff;
 }
 
-.filter__container-features{
+.signup__container-features{
     margin: 16px 0 32px;
     list-style: none;
     display: flex;
@@ -81,7 +85,7 @@
     align-items: center;
 }
 
-.filter__container-features li{
+.signup__container-features li{
     margin-bottom: 10px;
 }
 
@@ -90,7 +94,7 @@
 }
 
 @media screen and (max-width: 960px) {
-    .filter__container{
+    .signup__container{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -98,46 +102,23 @@
         width: 100%;
     }
 
-    .filter__container-card{
+    .signup__container-card{
         width: 90%;
     }
 
-    .filter__wrapper{
+    .signup__wrapper{
         margin: 0 30px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-    .filter__container-card:nth-child(2){
+    .signup__container-card:nth-child(2){
         transform: scale(1);
         background: #242424;
         margin: 24px;
     }
 
-    .filter__container-card:hover{
+    .signup__container-card:hover{
         transform: none;
     }
 }
-
-.button {
-    display: inline-block;
-    padding: 15px 25px;
-    font-size: 24px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    outline: none;
-    color: #fff;
-    background-color: #4CAF50;
-    border: none;
-    border-radius: 15px;
-    box-shadow: 0 9px #999;
-  }
-  
-  .button:hover {background-color: #3e8e41}
-  
-  .button:active {
-    background-color: #3e8e41;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
-  }
