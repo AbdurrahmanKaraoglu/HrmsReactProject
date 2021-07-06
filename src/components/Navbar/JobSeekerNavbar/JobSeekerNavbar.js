@@ -3,13 +3,11 @@ import { Link } from 'react-router-dom'
 import { GiHumanPyramid } from 'react-icons/gi'
 import { FaBars, FaTimes } from 'react-icons/fa'
 import { Button } from '../Button'
-import './navbar.css'
+import './jobSeekerNavbar.css'
 import { IconContext } from 'react-icons/lib'
 import { Avatar } from "@material-ui/core"
 
-
-function Navbar() {
-
+function JobSeekerNavbar() {
     const [click, setClick] = useState(false)
     const [button, setButton] = useState(true)
 
@@ -106,4 +104,4 @@ function Navbar() {
     )
 }
 
-export default Navbar
+export default JobSeekerNavbar

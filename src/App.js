@@ -14,6 +14,8 @@ import JobAds from './pages/JobAds';
 import SignUp from './components/pages/SignUp/SignUp';
 import SignUpJobSeeker from './components/pages/SignUp/SignUpJobSeeker/SignUpJobSeeker';
 import SignUpEmployer from './components/pages/SignUp/SignUpEmployer/SignUpEmployer';
+import Contact from './components/pages/Contact/Contact';
+import SignIn from './components/pages/SignIn/SignIn';
 
 
 
@@ -25,11 +27,13 @@ function App() {
         <Navbar />
        
           <Container className="main">
-
+         
           <Route path='/' exact component={Home}/>
           <Route path='/services' component={Services}/>
+          <Route path='/contact' component={Contact}/>
           <Route path='/jobsearch' component={FilterSubMenu}/>
           <Route path='/sign-up' component={SignUp}/>
+          <Route path='/sign-in' component={SignIn}/>
           <Route path='/sign-up-jobseeker' component={SignUpJobSeeker}/>
           <Route path='/sign-up-employer' component={SignUpEmployer}/>
   
