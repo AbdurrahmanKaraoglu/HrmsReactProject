@@ -4,6 +4,10 @@ export default class JobPostingFormService{
         return axios.get("http://localhost:8080/api/jobpostingforms/getAll");
     }
 
+    getJobPostingFormPageable(pageNo,pageSize){
+        return axios.get(`http://localhost:8080/api/jobpostingforms/getAllByPage?pageNo=${pageNo}&pageSize=${pageSize}`);
+    }
+
     getJobPostingFormReleaseDate(){
         return axios.get("http://localhost:8080/api/jobpostingforms/getByIsActiveOrderByReleaseDate");
     }

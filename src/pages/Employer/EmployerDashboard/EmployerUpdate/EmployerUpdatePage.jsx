@@ -57,8 +57,9 @@ export default function EmployerUpdatePage() {
 
   return (
     <div className="updatePage">
-      <h1>İşveren Bilgilerini Güncelle</h1>
+      
       <div className="myJobPostingContainer">
+      <h1 className='Container'>İşveren Bilgilerini Güncelle</h1>
         <Formik
           initialValues={initialValues}
           validationSchema={schema}

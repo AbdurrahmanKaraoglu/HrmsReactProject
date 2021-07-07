@@ -16,6 +16,10 @@ import SignUpJobSeeker from './components/pages/SignUp/SignUpJobSeeker/SignUpJob
 import SignUpEmployer from './components/pages/SignUp/SignUpEmployer/SignUpEmployer';
 import Contact from './components/pages/Contact/Contact';
 import SignIn from './components/pages/SignIn/SignIn';
+import UserTypes from './components/pages/UserTypes/UserTypes';
+import EmployerDashboardPage from './pages/Employer/EmployerDashboard/EmployerDashboardPage';
+import EmployerUpdatePage from './pages/Employer/EmployerDashboard/EmployerUpdate/EmployerUpdatePage';
+import EmployerProfile from './pages/Employer/EmployerDashboard/EmployerProfilePage/EmployerProfile';
 
 
 
@@ -25,29 +29,28 @@ function App() {
     <div className="App">
       <Router>
         <Navbar />
-       
-          <Container className="main">
-         
-          <Route path='/' exact component={Home}/>
-          <Route path='/services' component={Services}/>
-          <Route path='/contact' component={Contact}/>
-          <Route path='/jobsearch' component={FilterSubMenu}/>
-          <Route path='/sign-up' component={SignUp}/>
-          <Route path='/sign-in' component={SignIn}/>
-          <Route path='/sign-up-jobseeker' component={SignUpJobSeeker}/>
-          <Route path='/sign-up-employer' component={SignUpEmployer}/>
-  
+        <Switch>
+      
+            <Route path='/' exact component={Home} />
+            <Route path='/services' component={Services} />
+            <Route path='/usertypes' component={UserTypes} />
+            <Route path='/contact' component={Contact} />
+            <Route path='/jobsearch' component={FilterSubMenu} />
+            <Route path='/sign-up' component={SignUp} />
+            <Route path='/sign-in' component={SignIn} />
+            <Route path='/sign-up-jobseeker' component={SignUpJobSeeker} />
+            <Route path='/sign-up-employer' component={SignUpEmployer} />
+            <Route path='/dashboard/employer' component={EmployerDashboardPage} />
+            <Route path='dashboard/employer/update/1' component={EmployerUpdatePage} />
+
+           
+           
+
+    
+        </Switch>
 
 
-          
-            {/* <Topbar /> */}
-
-            {/* <Route path='/' exact component={HomePage} /> */}
-            {/* <Sidebar /> */}
-            {/* <Dashboard /> */}
-          </Container>
-       
-        {/* <br /> */}
+        <br />
         <Footer />
       </Router>
     </div>

@@ -1,10 +1,38 @@
 .dashboardpage{
- 
+ flex: 1;
+ margin: 20px;
+ background: linear-gradient(90deg, rgb(110,94,254) 0%, rgba(73,63,252,1) 
+ 100%);
+ font-size: 1.2rem;
+ padding: 100px 0 160px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ background: #fafafa;
 }
-.dashboardpage2{
-    flex: 4;
+.sidebardiv{
+    background-color: rgb(110,94,254);
+    display: flex;
+    padding: 100px 0 160px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 100px 0 160px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    
 }
 .dashboardpageWidgets{
     display: flex;
     margin: 20px;
+}
+.sidebardiv2{
+    background-color: red;
+    padding: 100px 0 160px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
 }

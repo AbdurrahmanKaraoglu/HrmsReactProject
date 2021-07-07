@@ -1,7 +1,17 @@
 
 .updatePage {
-    flex: 4;
-    padding: 20px;
+    
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  }
+
+  .updatePageTitle{
+    text-align: center;
+    background-color: red;
+    margin-bottom: 800px;
   }
   
 
@@ -16,6 +26,7 @@
       display: flex;
       justify-content: space-between;
       margin-top: 20px;
+      
   }
   
   .userUpdateItem{
@@ -95,5 +106,5 @@
     transform: translateY(4px);
   }
   .myJobPostingContainer{
-    height: 700px;
+
   }

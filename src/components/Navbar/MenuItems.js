@@ -1,37 +1,27 @@
-export const MenuItems=[
-    // {
-    //     title: 'Ana Sayfa',
-    //     url: "#",
-    //     cName: 'nav-links'
-    // },
+export const MenuItems = [
     {
-        title: 'İş Ara',
-        url: "#",
-        cName: 'nav-links'
+      title: 'İş Arayan',
+      path: '/dashboard/jobseeker',
+      cName: 'dropdown-link'
     },
     {
-        title: 'Dashboard',
-        url: "/dashboard/employer/",
-        cName: 'nav-links'
+      title: 'İş Veren',
+      path: '/dashboard/employer',
+      cName: 'dropdown-link'
     },
     {
-        title: 'Hizmetler',
-        url: "#",
-        cName: 'nav-links'
+      title: 'Sistem Personeli',
+      path: '/dashboard/employee',
+      cName: 'dropdown-link'
     },
     {
-        title: 'İletişim',
-        url: "#",
-        cName: 'nav-links'
+      title: 'Sistem Personeli',
+      path: '/dashboard/employee',
+      cName: 'dropdown-link'
     },
     {
-        title: 'Sign Up',
-        url: "#",
-        cName: 'nav-links-mobile'
-    },
-    {
-        title: 'Sign In',
-        url: "#",
-        cName: 'nav-links-mobile'
+      title: 'Sistem Personeli',
+      path: '/dashboard/employee',
+      cName: 'dropdown-link'
     }
-]
+  ];
